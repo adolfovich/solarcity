@@ -26,11 +26,25 @@ if (isset($user_id)) {
 header("Cache-Control: no cache");
 //session_cache_limiter("private_no_expire");
 
+//var_dump($url[0]);
 
+if ($url[0] == '' || $url[0] != 'cab') {
+    if ($url[0] != '') {
+        if (file_exists('pages/site/'.$url[0].'.php')) {
+            include ('pages/site/'.$url[0].'.php');
+        } else {
+            include ('pages/site/404.php');
+        }
+    } else {
+        include ('pages/site/default.php');
+    }
+}
+/*
 if ($url[0] == 'cab') {
   include ('pages/cab/template.php');
 } else if ($url[0] == 'video') {
   include ('pages/video.php');
 } else {
-  include ('pages/cab/login.php');
-}
+  //include ('pages/cab/login.php');
+  include ('pages/site/default.php');
+}*/
