@@ -459,14 +459,15 @@
     </script>
 
 
-    <link rel="apple-touch-icon" sizes="180x180" href="https://tobiz.net/favicon/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="https://tobiz.net/favicon/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="https://tobiz.net/favicon/favicon-16x16.png">
-    <link rel="manifest" href="https://tobiz.net/favicon/site.webmanifest">
-    <link rel="shortcut icon" href="https://tobiz.net/favicon/favicon.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon/favicon-16x16.png">
+    <link rel="shortcut icon" href="/assets/favicon/favicon.ico">
+
+    <!--link rel="manifest" href="https://tobiz.net/favicon/site.webmanifest">
     <meta name="msapplication-TileColor" content="#da532c">
     <meta name="msapplication-config" content="https://tobiz.net/favicon/browserconfig.xml">
-    <meta name="theme-color" content="#ffffff">	<!-- svg favicon -->
+    <meta name="theme-color" content="#ffffff"-->	<!-- svg favicon -->
 
     <style data-generic="pageCacheCSS"></style>
     <!-- Google Fonts - Selective Loader --><link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;family=Ubuntu:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;family=Roboto:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap" rel="stylesheet">
@@ -535,20 +536,43 @@
 <div id="wrapper" class="">
 
 
-    <div class="	section section105					bg_mode_color" style="	background-color:#fff;	;	--dropdown-menu-bg-color:#ffffff;	--dropdown-menu-text-color:#333333;	--dropdown-menu-border-color:#f1f1f1;	--dropdown-menu-hover-bg-color:#f8f9fa;	--dropdown-menu-hover-text-color:#333333;	--dropdown-menu-shadow:0 3px 10px rgba(0, 0, 0, 0.2);	--dropdown-menu-item-padding:4px 15px;	padding-top:20px;	padding-bottom:20px" data-id="1709038" id="b_1709038">
-        <a name="a_1706986"></a><div class="section_inner all_border width1170">	<div class="logo"><div class="logo_img"><img src="/img/200x0/tobiz_logo_def_black.png" srcset="/img/200x0/tobiz_logo_def_black.png 1x, /img/400x0/tobiz_logo_def_black.png 2x" loading="lazy"></div></div>		<div class="menu-and-phone-and-btn">		<div class="phones-wrapper" style="--phone-text-color:;--phone-font-size:20px;--phone-font-weight:500;"><div class="phone1 zphone show_phone_icon"><a href="tel:88003332233">8 800 333 22 33</a></div></div>				<div style="color:#000;background-color:rgba(0,0,0,0)" class="menu_mobile_btn square new_burger"><svg><use xlink:href="/img/menu_burger.svg#menu"></use></svg></div>		<div class="menu1" style="font-size:16px;background-color:#fff;color:#333333;font-weight:300">			<ul>
+    <div class="section section105 bg_mode_color" style="	background-color:#fff;	;	--dropdown-menu-bg-color:#ffffff;	--dropdown-menu-text-color:#333333;	--dropdown-menu-border-color:#f1f1f1;	--dropdown-menu-hover-bg-color:#f8f9fa;	--dropdown-menu-hover-text-color:#333333;	--dropdown-menu-shadow:0 3px 10px rgba(0, 0, 0, 0.2);	--dropdown-menu-item-padding:4px 15px;	padding-top:20px;	padding-bottom:20px" data-id="1709038" id="b_1709038">
+        <div class="section_inner all_border width1170">
+            <div class="logo">
+                <div class="logo_img"><img src="/assets/img/logo_top.png" loading="lazy"></div>
+            </div>
+            <div class="menu-and-phone-and-btn">
+                <div class="phones-wrapper" style="--phone-text-color:;--phone-font-size:20px;--phone-font-weight:500;">
+                    <div class="phone1 zphone show_phone_icon"><a href="tel:88003332233">8 800 333 22 33</a></div>
+                </div>
+                <div style="color:#000;background-color:rgba(0,0,0,0)" class="menu_mobile_btn square new_burger">
+                    <svg><use xlink:href="/img/menu_burger.svg#menu"></use></svg>
+                </div>
+                <div class="menu1" style="font-size:16px;background-color:#fff;color:#333333;font-weight:300">
+                    <ul>
                         <li class="level0 "><a href="#anchor1" title="ПОЧЕМУ МЫ">ПОЧЕМУ МЫ</a></li>
-                        <li class="level0 "><a href="#anchor3" title="СПЕЦИАЛИСТЫ">СПЕЦИАЛИСТЫ</a></li>
+                        <li class="level0 "><a href="#anchor3" title="СПЕЦИАЛИСТЫ">КАТАЛОГ</a></li>
                         <li class="level0 "><a href="#anchor4" title="КОНТАКТЫ">КОНТАКТЫ</a></li>
-                    </ul>		</div>	</div>				<div class="flag_icons">		<div class="flag_txt">EN</div>			<a target="_blank" class="sn sn-rus  link_rus" href=""></a>			<a target="_blank" class="sn sn-uk  link_uk" href=""></a>			<a target="_blank" class="sn sn-france  hidden link_france" href=""></a>			<a target="_blank" class="sn sn-spain  hidden link_spain" href=""></a>			<a target="_blank" class="sn sn-germany  hidden link_germany" href=""></a>			<a target="_blank" class="sn sn-italy  hidden link_italy" href=""></a>			<a target="_blank" class="sn sn-china  hidden link_china" href=""></a>		</div>		</div>
+                    </ul>
+                </div>
+            </div>
+        </div>
     </div>
 
-    <div class="section section1154        clip_none  bg_mode_image dark" style="	background-image:url(/img/1920x0/a97d311604300d0a1d97640b6d9b35bb.jpg);--section-background-repeat:no-repeat;--section-background-position:center center;--section-background-size:cover;	padding-top:150px;	padding-bottom:100px;	" data-id="1709039" id="b_1709039">
-        <a name="a_1698109"></a><div class="dark"></div>
+    <div class="section section1154 clip_none  bg_mode_image dark" style="	background-image:url(/assets/img/top_bg.jpg);--section-background-repeat:no-repeat;--section-background-position:center center;--section-background-size:cover;	padding-top:150px;	padding-bottom:100px;	" data-id="1709039" id="b_1709039">
+        <a name="a_1698109"></a>
+        <div class="dark"></div>
         <div class="back_dark" style="opacity:0.35;background:linear-gradient(to bottom, #212121 0%, #212121 100%)"></div>
-        <div class="section_inner width1170 all_border">	<div class="headliner  ">		<div class="title dark" style="margin-bottom:24px;font-weight:600">
-                    <span style="font-size: 54px;"><b>ДЕРЕВЯННЫЕ ДОМА </b></span><span style="font-size:30px;">под ключ<br>в Чебоксарах от 2,5 млн. рублей</span><span style="font-size: 54px;"></span>
-                </div>		<div class="sub_title dark" style="margin-bottom:24px;font-weight:400"><p>Здесь будет Ваше описание. Если у вас есть возможность увидеть только один город в Италии, то пусть это будет Рим, великий, многогранный, одновременно шумный и уютный, узнаваемый и не до конца известный.</p></div>		<div class="btn1 surround" data-hcolor="#475a64" style="background-color:#f9c000;  border-radius: 0em;   box-shadow: 0;  font-size: 20px;   ">Оставить заявку сейчас</div>	</div>
+        <div class="section_inner width1170 all_border">
+            <div class="headliner  ">
+                <div class="title dark" style="margin-bottom:24px;font-weight:600">
+                    <span style="font-size: 54px;"><b>Ваш ключ к счастливой жизни! </b></span>
+                </div>
+                <div class="sub_title dark" style="margin-bottom:24px;font-weight:400">
+                    <p>Мы понимаем, что покупка или продажа жилья — это не просто сделка, а важный шаг на пути к вашей мечте. Поэтому мы делаем процесс простым, прозрачным и безопасным.</p>
+                </div>
+                <div class="btn1 surround" data-hcolor="#475a64" style="background-color:#f9c000;  border-radius: 0em;   box-shadow: 0;  font-size: 20px;   ">Оставить заявку сейчас</div>
+            </div>
             <div class="popup_form">
                 <div class="popup_form_inner">
                     <!--noindex--><div class="popup_form_close"></div>
@@ -597,7 +621,14 @@
 
     <div class="	section section1127	clip_none 	size_700x500					decor_line	bg_mode_color" style="	background-color:#ffffff;	padding-top:100px;	padding-bottom:60px;	" data-id="1709040" id="b_1709040">
         <a name="a_1705835"></a><div class="noise" style="background-image:url(/img/natural-paper.png)"></div>
-        <div class="section_inner all_border width1170">			<div class="arr1">			<div data-link="" class="image1  top_left size_700x500">				<img src="/img/700x500/c87c34aa08ce28efb98e0e01c49816f5.jpg" srcset="/img/700x500/c87c34aa08ce28efb98e0e01c49816f5.jpg 1x, /img/1400x1000/c87c34aa08ce28efb98e0e01c49816f5.jpg 2x" width="700px" height="500px" loading="lazy">			</div>			<div class="right top_left size_700x500">				<div class="bg_right" style="opacity:1;background:#F2F2F2"></div>				<div class="title1" style="margin-bottom:1rem;font-weight:500"><strong><span style="font-size:26px"><span style="color:#000000"><span style="font-family:montserrat">О НАШЕЙ КОМПАНИИ</span></span></span></strong></div>				<div class="txt1">
+        <div class="section_inner all_border width1170">
+            <div class="arr1">
+                <div data-link="" class="image1  top_left size_700x500">
+                    <img src="/assets/img/index1.png"  width="700px" height="500px" loading="lazy">
+                </div>
+                <div class="right top_left size_700x500">
+                    <div class="bg_right" style="opacity:1;background:#F2F2F2"></div>
+                    <div class="title1" style="margin-bottom:1rem;font-weight:500"><strong><span style="font-size:26px"><span style="color:#000000"><span style="font-family:montserrat">О НАШЕЙ КОМПАНИИ</span></span></span></strong></div>				<div class="txt1">
                         <span style="color:#333333"></span><p>Описание компании нужно вставить сюда тем же шрифтом и тем же Описание компании нужно вставить сюда тем же шрифтом и тем же размером текста.&nbsp;Описание компании нужно вставить сюда тем же шрифтом и тем же размером текста.</p>
                         <span style="color:#333333"></span>
                     </div>				<div class="btn1 surround" data-hcolor="#475a64" style="background-color:#f9c000;  border-radius: 0em;   box-shadow: 0;  font-size: 18px;   ">ОСТАВИТЬ ЗАЯВКУ</div>
@@ -683,28 +714,89 @@
         </div>
     </div>
 
-    <div class="	section section130 	btn_align_center		clip_none 	s_mode_c_icon	mobile_col2													transparent_ico			bg_mode_color" style="	background-color:#ffffff;	padding-top:80px;	padding-bottom:10px;		--tiles_radius:0px;	--tiles_shadow:none;	--tiles-padding:20px;		--bg_color:#ffffff;	--tiles-text-align:center" data-id="1709041" id="b_1709041">
-        <a name="a_1698545"></a><div class="noise" style="background-image:url(/img/natural-paper.png)"></div>
-        <div class="section_inner all_border  width1170" style=";--icon_size:64px;--btn_fweight:300;--btn_fsize:18px;--item_title_fweight:400">			<div class="catalog_items short_text count4 c_icon ">							<div class="arr1">			<div class="col_4">																																												<div class="c_ico1  radius " style="background-image:url(/cicons/copier.svg)"></div>				<div class="title1"><span style="color:#333333"><span style="font-size:22px"><span style="font-family:ubuntu"><strong>ОПЫТ РАБОТЫ</strong></span></span></span></div>				<div class="txt1"><p>Подробное описание преимуществ Вашей компании</p></div>																													</div>				</div>						<div class="arr1">			<div class="col_4">																																												<div class="c_ico1  radius " style="background-image:url(/cicons/files.svg)"></div>				<div class="title1"><span style="font-size:22px"><span style="font-family:ubuntu"><strong><span style="color:#555555">​​​​​​​</span>КАЧЕСТВО</strong></span></span></div>				<div class="txt1">Подробное описание преимуществ Вашей компании</div>																													</div>				</div>						<div class="arr1">			<div class="col_4">																																												<div class="c_ico1  radius " style="background-image:url(/cicons/telescope.svg)"></div>				<div class="title1"><span style="color:#333333"><span style="font-size:22px"><span style="font-family:ubuntu"><strong>ГОТОВАЯ СТРАТЕГИЯ</strong></span></span></span></div>				<div class="txt1">Подробное описание преимуществ Вашей компании</div>																													</div>				</div>						<div class="arr1">			<div class="col_4">																																												<div class="c_ico1  radius " style="background-image:url(/cicons/megaphone.svg)"></div>				<div class="title1"><span style="font-family:ubuntu,sans-serif;"><span style="font-size:22px"><strong>ВЫГОДНАЯ ЦЕНА</strong></span></span></div>				<div class="txt1">Подробное описание преимуществ Вашей компании</div>																													</div>				</div>							</div>			</div>
-    </div>
+    <!--div class="section section130 	btn_align_center clip_none s_mode_c_icon mobile_col2 transparent_ico bg_mode_color" style="background-color:#ffffff; padding-top:80px; padding-bottom:10px; --tiles_radius:0px; --tiles_shadow:none; --tiles-padding:20px; --bg_color:#ffffff;	--tiles-text-align:center" data-id="1709041" id="b_1709041">
+        <a name="a_1698545"></a>
+        <div class="noise" style="background-image:url(/img/natural-paper.png)"></div>
+        <div class="section_inner all_border width1170" style=";--icon_size:64px;--btn_fweight:300;--btn_fsize:18px;--item_title_fweight:400">
+            <div class="catalog_items short_text count4 c_icon ">
+                <div class="arr1">
+                    <div class="col_4">
+                        <div class="c_ico1  radius " style="background-image:url(/cicons/copier.svg)"></div>
+                        <div class="title1"><span style="color:#333333"><span style="font-size:22px"><span style="font-family:ubuntu"><strong>ОПЫТ РАБОТЫ</strong></span></span></span></div>
+                        <div class="txt1"><p>Подробное описание преимуществ Вашей компании</p></div>
+                    </div>
+                </div>
+                <div class="arr1">
+                    <div class="col_4">
+                        <div class="c_ico1  radius " style="background-image:url(/cicons/files.svg)"></div>
+                        <div class="title1"><span style="font-size:22px"><span style="font-family:ubuntu"><strong><span style="color:#555555">​​​​​​​</span>КАЧЕСТВО</strong></span></span></div>
+                        <div class="txt1">Подробное описание преимуществ Вашей компании</div>
+                    </div>
+                </div>
+                <div class="arr1">
+                    <div class="col_4">
+                        <div class="c_ico1  radius " style="background-image:url(/cicons/telescope.svg)"></div>
+                        <div class="title1"><span style="color:#333333"><span style="font-size:22px"><span style="font-family:ubuntu"><strong>ГОТОВАЯ СТРАТЕГИЯ</strong></span></span></span></div>
+                        <div class="txt1">Подробное описание преимуществ Вашей компании</div>
+                    </div>
+                </div>
+                <div class="arr1">
+                    <div class="col_4">
+                        <div class="c_ico1  radius " style="background-image:url(/cicons/megaphone.svg)"></div>
+                        <div class="title1"><span style="font-family:ubuntu,sans-serif;"><span style="font-size:22px"><strong>ВЫГОДНАЯ ЦЕНА</strong></span></span></div>
+                        <div class="txt1">Подробное описание преимуществ Вашей компании</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div-->
 
-    <div class="	section section250	clip_none 				bg_text				mode_3		bg_mode_color" style="	background-color:#f5f5f5;	--section-image-radius:0;	padding-top:80px;	padding-bottom:80px;	" data-id="1709042" id="b_1709042">
+    <div class="section section250	clip_none bg_text mode_3 bg_mode_color" style="background-color:#f5f5f5; --section-image-radius:0; padding-top:80px; padding-bottom:80px;" data-id="1709042" id="b_1709042">
         <a name="anchor1"></a><div class="noise" style="background-image:url(/img/natural-paper.png)"></div>
         <div class="section_inner all_border width1170">	<div class="title" style="margin-bottom:1rem;font-weight:500">
                 <p><span style="color:#696969"><span style="font-size:17px"><strong>П Р Е И М У Щ Е С Т В А</strong></span></span></p>
                 <p><span style="font-size:48px"><strong>НАС ВЫБИРАЮТ</strong></span></p>
-            </div>				<div class="arr1">			<div class="col_2">													<div class="overlay_image_box">						<div class="overlay_image_title title1"><span style="font-size:22px">#1 – <span style="font-family:ubuntu,sans-serif;">Преимущества работы с вашей компанией</span></span></div>						<div class="overlay_image_subtitle subtitle1"><p>Подробное описание этого преимущества в идеальном соотношении - это текст в 2 строчки. Так выглядеть текст будет максимально элегантно.</p></div>											</div>															</div>			<div class="col_2 last">													<div class="overlay_image_box">						<div class="overlay_image_title title2"><span style="font-size:22px">#2 –&nbsp;<span style="font-family:ubuntu">Еще преимущества работы с Вами</span></span></div>						<div class="overlay_image_subtitle subtitle2"><p>Подробное описание этого преимущества в идеальном соотношении - это текст в 2 строчки. Так выглядеть текст будет максимально элегантно.</p></div>											</div>															</div>		</div>			<div class="arr1">			<div class="col_2">													<div class="overlay_image_box">						<div class="overlay_image_title title1"><span style="font-size:22px">#3 –&nbsp;<span style="font-family:ubuntu">Еще преимущества работы с Вами</span></span></div>						<div class="overlay_image_subtitle subtitle1"><p>Подробное описание этого преимущества в идеальном соотношении - это текст в 2 строчки. Так выглядеть текст будет максимально элегантно.</p></div>											</div>															</div>			<div class="col_2 last">													<div class="overlay_image_box">						<div class="overlay_image_title title2"><span style="font-size:22px">#4 –&nbsp;<span style="font-family:ubuntu">Еще одно преимущество работы с Вами</span></span></div>						<div class="overlay_image_subtitle subtitle2"><p>Подробное описание этого преимущества в идеальном соотношении - это текст в 2 строчки. Так выглядеть текст будет максимально элегантно.</p></div>											</div>															</div>		</div>		<div class="clear"></div>
+            </div>
+            <div class="arr1">
+                <div class="col_2">
+                    <div class="overlay_image_box">
+                        <div class="overlay_image_title title1"><span style="font-size:22px">#1 – <span style="font-family:ubuntu,sans-serif;">Преимущества работы с вашей компанией</span></span></div>
+                        <div class="overlay_image_subtitle subtitle1"><p>Подробное описание этого преимущества в идеальном соотношении - это текст в 2 строчки. Так выглядеть текст будет максимально элегантно.</p></div>
+                    </div>
+                </div>
+                <div class="col_2 last">
+                    <div class="overlay_image_box">
+                        <div class="overlay_image_title title2"><span style="font-size:22px">#2 –&nbsp;<span style="font-family:ubuntu">Еще преимущества работы с Вами</span></span></div>
+                        <div class="overlay_image_subtitle subtitle2"><p>Подробное описание этого преимущества в идеальном соотношении - это текст в 2 строчки. Так выглядеть текст будет максимально элегантно.</p></div>
+                    </div>
+                </div>
+            </div>
+            <div class="arr1">
+                <div class="col_2">
+                    <div class="overlay_image_box">
+                        <div class="overlay_image_title title1"><span style="font-size:22px">#3 –&nbsp;<span style="font-family:ubuntu">Еще преимущества работы с Вами</span></span></div>
+                        <div class="overlay_image_subtitle subtitle1"><p>Подробное описание этого преимущества в идеальном соотношении - это текст в 2 строчки. Так выглядеть текст будет максимально элегантно.</p></div>
+                    </div>
+                </div>
+                <div class="col_2 last">
+                    <div class="overlay_image_box">
+                        <div class="overlay_image_title title2"><span style="font-size:22px">#4 –&nbsp;<span style="font-family:ubuntu">Еще одно преимущество работы с Вами</span></span></div>
+                        <div class="overlay_image_subtitle subtitle2"><p>Подробное описание этого преимущества в идеальном соотношении - это текст в 2 строчки. Так выглядеть текст будет максимально элегантно.</p></div>
+                    </div>
+                </div>
+            </div>
+            <div class="clear"></div>
         </div>
     </div>
 
-    <div class="	section section1417	clip_none 					bg_mode_color" style="	background-color:#ffffff;	padding-top:40px;	padding-bottom:80px;	" data-id="1709043" id="b_1709043">
+    <!--div class="	section section1417	clip_none 					bg_mode_color" style="	background-color:#ffffff;	padding-top:40px;	padding-bottom:80px;	" data-id="1709043" id="b_1709043">
         <a name="a_1698234"></a><div class="section_inner all_border width1170">	<div class="title" style="margin-bottom:1rem;font-weight:500">
                 <p><span style="color:#A9A9A9;"><span style="font-size:17px"><strong><span style="font-family:ubuntu">Э Т А П Ы&nbsp; Р А Б О Т Ы</span></strong></span></span></p>
                 <p><span style="font-size:48px"><span style="font-family:ubuntu"><span style="color:#444444"><strong>КАК ПРОХОДИТ РАБОТА</strong></span></span></span></p>
             </div>	<div class="sub_title" style="margin-bottom:2rem;font-weight:400"><br></div>			<div class="arr1">			<div class="line" style="background-color:#333"></div>			<div class="mdico" style="background-color:#333"><i class="md md-brightness-1"></i></div>			<div class="col2 col_2">				<div class="extra_descr">1 этап</div>			</div>			<div class="col1 col_2">			<div class="title"><span style="font-size:26px">Вы оставляете заявку</span></div>			<div class="descr">на нашем сайте. Сделать это можно при помощи любой формы для связи</div>			</div>			<div class="clear"></div>		</div>			<div class="arr1">			<div class="line" style="background-color:#333"></div>			<div class="mdico" style="background-color:#333"><i class="md md-brightness-1"></i></div>			<div class="col2 col_2">				<div class="extra_descr">2 этап</div>			</div>			<div class="col1 col_2">			<div class="title"><span style="font-size:26px">Уточняем детали</span></div>			<div class="descr">практическое домашнее задание с&nbsp;проверкой и&nbsp;обратной связью</div>			</div>			<div class="clear"></div>		</div>			<div class="arr1">			<div class="line" style="background-color:#333"></div>			<div class="mdico" style="background-color:#333"><i class="md md-brightness-1"></i></div>			<div class="col2 col_2">				<div class="extra_descr">3 этап</div>			</div>			<div class="col1 col_2">			<div class="title"><span style="font-size:26px;">Общение с экспертами</span></div>			<div class="descr">Каждый студент может пообщаться с&nbsp;экспертами&nbsp;</div>			</div>			<div class="clear"></div>		</div>			<div class="arr1">			<div class="line" style="background-color:#333"></div>			<div class="mdico" style="background-color:#333"><i class="md md-brightness-1"></i></div>			<div class="col2 col_2">				<div class="extra_descr">4 этап</div>			</div>			<div class="col1 col_2">			<div class="title"><span style="font-size:26px;">Помощь с карьерой</span></div>			<div class="descr">Центр развития карьеры поможет с составлением резюме</div>			</div>			<div class="clear"></div>		</div>	</div>
-    </div>
+    </div-->
 
-    <div class="	section section146 	clip_none		square						bg_mode_color" style="	background-color:#f8f8f8;	--img-gap-Y:15px;	--img-gap-X:20px;	padding-top:60px;	padding-bottom:60px;	--images-justify-content:center;" data-id="1709044" id="b_1709044">
+    <!--div class="	section section146 	clip_none		square						bg_mode_color" style="	background-color:#f8f8f8;	--img-gap-Y:15px;	--img-gap-X:20px;	padding-top:60px;	padding-bottom:60px;	--images-justify-content:center;" data-id="1709044" id="b_1709044">
         <a name="a_1707632"></a><div class="section_inner all_border width1170" style=";--img_radius:0px;--img_grayscale:0;--img_blur:0px">	<div class="title" style="margin-bottom:1rem;font-weight:500">
                 <span style="font-size:40px"><span style="font-family:montserrat"></span></span><p><span style="font-size:17px"><span style="color:#A9A9A9"><strong><span style="font-family:ubuntu">Н А Г Р А Д Ы</span></strong></span></span></p>
                 <p><span style="font-size:48px"><span style="font-family:ubuntu"><span style="color:#444444"><strong>2019 REWARD КОМПАНИЯ</strong></span></span></span></p>
@@ -712,9 +804,9 @@
             </div>	<div class="sub_title" style="margin-bottom:2rem;font-weight:400">
                 <span style="font-size:22px">Планируя свои дни в городе, пожалуйста, отведите достаточно времени на то, чтобы увидеть не только Колизей, Испанскую лестницу, площадь Навона и обалдеть от красоты и количества туристов, но и для того, чтобы познакомиться с другим, жилым, спокойным, но не менее красивым Римом.&nbsp;</span>​​​​​​​</div>	<div class="images">					<div class="arr1 image_box">				<img src="/img/400x400/e10c0920b28341a4ffb6fb99babe4d76.jpg" srcset="/img/400x400/e10c0920b28341a4ffb6fb99babe4d76.jpg 1x, /img/800x800/e10c0920b28341a4ffb6fb99babe4d76.jpg 2x" width="400px" height="400px" loading="lazy">				<div class="overlay_image_box  active_off" data-link="" data-link-target="0">					<div class="overlay_image_title">Any bit of imaginable information rests at your fingertips</div>					<div class="overlay_image_descr">And search away</div>				</div>			</div>					<div class="arr1 image_box">				<img src="/img/400x400/4ff07182656fcd7db9cdb9790ea9a9e9.jpg" srcset="/img/400x400/4ff07182656fcd7db9cdb9790ea9a9e9.jpg 1x, /img/800x800/4ff07182656fcd7db9cdb9790ea9a9e9.jpg 2x" width="400px" height="400px" loading="lazy">				<div class="overlay_image_box  active_off" data-link="" data-link-target="0">					<div class="overlay_image_title">Any bit of imaginable information rests at your fingertips</div>					<div class="overlay_image_descr">And search away</div>				</div>			</div>					<div class="arr1 image_box">				<img src="/img/400x400/40e8d6efe5e66a62b35c5ca9fabab4ad.jpg" srcset="/img/400x400/40e8d6efe5e66a62b35c5ca9fabab4ad.jpg 1x, /img/800x800/40e8d6efe5e66a62b35c5ca9fabab4ad.jpg 2x" width="400px" height="400px" loading="lazy">				<div class="overlay_image_box  active_off" data-link="" data-link-target="0">					<div class="overlay_image_title">Any bit of imaginable information rests at your fingertips</div>					<div class="overlay_image_descr">And search away</div>				</div>			</div>			</div>
         </div>
-    </div>
+    </div-->
 
-    <div class="	section section304	clip_none 				bg_mode_color" style="	background-color:#FFFFFF;	padding-top:80px;	padding-bottom:40px;	--content-bg-color:#ffffff;	--content-bg-radius:7px;	" data-id="1709045" id="b_1709045">
+    <!--div class="	section section304	clip_none 				bg_mode_color" style="	background-color:#FFFFFF;	padding-top:80px;	padding-bottom:40px;	--content-bg-color:#ffffff;	--content-bg-radius:7px;	" data-id="1709045" id="b_1709045">
         <a name="a_1698137"></a><div class="section_inner all_border width1170">	<div class="title" style="margin-bottom:1rem;font-weight:500">
                 <p><span style="font-family:ubuntu"><span style="color:#A9A9A9"><span style="font-size:17px"><strong>П Р О Г Р А М М А</strong></span></span><br><span style="font-size:48px"><span style="color:#444444"><strong>ПРОФЕССИОНАЛЬНО</strong></span></span></span></p>
                 <p style="text-align:left"><br></p>
@@ -775,7 +867,7 @@
                                 </ul>
                             </div>
                         </div>				</div>				<div class="spoiler_toggle" style="background-color:#333">+</div>			</div>		</div>	</div>
-    </div>
+    </div-->
 
     <div class="	section section1250	clip_none 					bg_mode_color" style="	background-color:#ffffff;	padding-top:40px;	padding-bottom:120px;	" data-id="1709046" id="b_1709046">
         <a name="a_1698142"></a><div class="section_inner all_border width1170 middle center">					<div class="arr1">			<div class="btn1    " data-hcolor="#475a64" style="color:#f9c000;  border-radius: 0em;   box-shadow: 0;  font-size: 18px;    ">Бесплатная консультация</div>
@@ -863,7 +955,7 @@
         </div>
     </div>
 
-    <div class="section section258     btn-m  section_direction_column icons_direction_column clip_none  bg_mode_image light" style="	background-image:url(/img/1920x0/2e1f3af8f905b5743a7c736ce62f0867.jpg);--section-background-repeat:no-repeat;--section-background-position:center center;--section-background-size:cover;	padding-top:40px;	padding-bottom:40px;	--icons-bg:;		--icons-count:3;	--icons-gap-Y:25px;	--icons-gap-X:25px;	" data-id="1709048" id="b_1709048">
+    <!--div class="section section258     btn-m  section_direction_column icons_direction_column clip_none  bg_mode_image light" style="	background-image:url(/img/1920x0/2e1f3af8f905b5743a7c736ce62f0867.jpg);--section-background-repeat:no-repeat;--section-background-position:center center;--section-background-size:cover;	padding-top:40px;	padding-bottom:40px;	--icons-bg:;		--icons-count:3;	--icons-gap-Y:25px;	--icons-gap-X:25px;	" data-id="1709048" id="b_1709048">
         <a name="a_1698246"></a><div class="back_dark" style="opacity:0.96;background:linear-gradient(to bottom, #ffffff 0%, #ffffff 100%)"></div>
         <div class="section_inner width1170">	<div class="title light" style="margin-bottom:1rem;font-weight:500">
                 <p style="text-align:center"><span style="color:#000000;"><br></span></p>
@@ -906,16 +998,18 @@
                             </div>					</div>				</div>					</div>	</div>
             <div class="popup_thanks">
                 <div class="popup_thanks_inner">
-                    <!--noindex-->
+
+
                     <div class="popup_thanks_close">X</div>
                     <div class="popup_thanks_title">Спасибо за заявку!</div>
                     <div class="popup_thanks_text">Заявка отправлена. Наш менеджер свяжется с Вами в ближайшее время.</div>
-                    <!--/noindex-->
+
+
                 </div>
             </div>	</div>
-    </div>
+    </div-->
 
-    <div class="	section section117 	clip_none 				bg_text	bg_mode_color" style="	background-color:#ffffff;	--section-image-radius:0;	padding-top:80px;	padding-bottom:60px;	" data-id="1709049" id="b_1709049">
+    <!--div class="	section section117 	clip_none 				bg_text	bg_mode_color" style="	background-color:#ffffff;	--section-image-radius:0;	padding-top:80px;	padding-bottom:60px;	" data-id="1709049" id="b_1709049">
         <a name="anchor3"></a><div class="section_inner all_border width1170">	<div class="title" style="margin-bottom:1rem;font-weight:500">
                 <p><span style="color:#A9A9A9"><span style="font-size:17px"><span style="font-family:ubuntu"><strong>Э К С П Е Р Т Ы&nbsp;</strong></span></span></span></p>
                 <p><span style="color:#444444"><span style="font-size:48px"><span style="font-family:ubuntu"><strong>Наши лучшие специалисты</strong></span></span></span></p>
@@ -931,28 +1025,54 @@
                             <p><br>Есть десяток причин, почему сайт конкурентов в топе, а ваш — нет. На моём занятии мы разбираем чуть менее, чем все факторы ранжирования, и учимся нажимать на все кнопочки сразу, чтобы поднять вас на первые позиции в выдаче.</p>
                         </div>			</div>		</div>		</div>
         </div>
-    </div>
+    </div-->
 
-    <div data-autoslide="0" class="section section320 clip_none   slider bg_text bg_mode_color " style="background-color:#ffffff;padding-top:120px;padding-bottom:80px;" data-id="1709050" id="b_1709050">
+    <div data-autoslide="0" class="section section320 clip_none slider bg_text bg_mode_color " style="background-color:#ffffff;padding-top:120px;padding-bottom:80px;" data-id="1709050" id="b_1709050">
         <a name="a_1698370"></a><div class="back_dark" style="opacity:0.69;background:linear-gradient(to bottom, #3a2923 0%, #424242 100%)"></div>
         <div class="dark"></div>
-        <div class="section_inner all_border width1170">	<div class="title" style="margin-bottom:1rem;font-weight:500">
+        <div class="section_inner all_border width1170">
+            <div class="title" style="margin-bottom:1rem;font-weight:500">
                 <p><br></p>
                 <p><span style="color:#444444"><span style="font-size:40px"><strong><span style="font-family:ubuntu">Отзывы наших клиентов</span></strong></span></span></p>
-            </div>	<div class="sub_title" style="margin-bottom:2rem;font-weight:400"></div>		<div class="slider_wrapper" style="left: 0%;">
+            </div>	<div class="sub_title" style="margin-bottom:2rem;font-weight:400"></div>
+            <div class="slider_wrapper" style="left: 0%;">
                 <div class="go_left"><i class="fa fa-angle-left"></i></div>
-                <div class="go_right"><i class="fa fa-angle-right"></i></div>						<div class="arr1 slide" style="display: block;">				<div class="col_1">					<div class="image1 img_radius" data-link="">						<img src="/img/220x220/3924b35391e7b2c06add969a90d5fb68.jpg" srcset="/img/220x220/3924b35391e7b2c06add969a90d5fb68.jpg 1x, /img/440x440/3924b35391e7b2c06add969a90d5fb68.jpg 2x" width="220px" height="220px" loading="lazy">					</div>					<div class="overlay_image_box">						<div class="overlay_image_title title1">
+                <div class="go_right"><i class="fa fa-angle-right"></i></div>
+                <div class="arr1 slide" style="display: block;">
+                    <div class="col_1">
+                        <div class="image1 img_radius" data-link="">
+                            <img src="/assets/img/review.jpg" width="220px" height="220px" loading="lazy">
+                        </div>
+                        <div class="overlay_image_box">
+                            <div class="overlay_image_title title1">
                                 <p style="text-align:center"><span style="font-size:24px">Михаил Савинский</span></p>
-                                <p style="text-align:center"><span style="color:#A9A9A9"><em>менеджер по маркетингу</em></span></p>
-                            </div>						<div class="overlay_image_subtitle subtitle1"><p style="text-align:center">Выражаю огромную благодарность агентству за креативный подход и качественную работу.&nbsp;Я сотрудничаю с ними уже не первый год и могу сказать, что очень доволен результатом нашего сотрудничества.&nbsp;</p></div>					</div>				</div>			</div>					<div class="arr1 slide" style="display: none;">				<div class="col_1">					<div class="image1 img_radius" data-link="">						<img src="/img/220x220/18d202a07e3a333c58621df43d6b5d79.jpg" srcset="/img/220x220/18d202a07e3a333c58621df43d6b5d79.jpg 1x, /img/440x440/18d202a07e3a333c58621df43d6b5d79.jpg 2x" width="220px" height="220px" loading="lazy">					</div>					<div class="overlay_image_box">						<div class="overlay_image_title title1">
+                            </div>
+                            <div class="overlay_image_subtitle subtitle1">
+                                <p style="text-align:center">Выражаю огромную благодарность агентству за креативный подход и качественную работу.&nbsp;Я сотрудничаю с ними уже не первый год и могу сказать, что очень доволен результатом нашего сотрудничества.&nbsp;</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="arr1 slide" style="display: none;">
+                    <div class="col_1">
+                        <div class="image1 img_radius" data-link="">
+                            <img src="/assets/img/review.jpg" width="220px" height="220px" loading="lazy">					</div>					<div class="overlay_image_box">						<div class="overlay_image_title title1">
                                 <p style="text-align:center"><span style="font-size:24px;">Александр Александров</span></p>
-                                <p style="text-align:center"><span style="color:#A9A9A9"><em>менеджер проектов</em></span></p>
-                            </div>						<div class="overlay_image_subtitle subtitle1"><p style="text-align:center">Компания доказала профессионализм каждого специалиста. Мы выражаем благодарность всей команде и руководителю агентства, в частности. Планируем обращаться в дальнейшем и рекомендовать нашим партнерам.</p></div>					</div>				</div>			</div>			<div class="scroller"><div class="point current" data-id="0"></div><div class="point" data-id="1"></div></div>
+                            </div>
+                            <div class="overlay_image_subtitle subtitle1">
+                                <p style="text-align:center">Компания доказала профессионализм каждого специалиста. Мы выражаем благодарность всей команде и руководителю агентства, в частности. Планируем обращаться в дальнейшем и рекомендовать нашим партнерам.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="scroller"><div class="point current" data-id="0"></div>
+                    <div class="point" data-id="1"></div>
+                </div>
             </div>
         </div>
     </div>
 
-    <div class="	section section1121	clip_none 	size_900x700				bg_mode_color" style="	background-color:#ffffff;	padding-top:100px;	padding-bottom:80px;	" data-id="1709051" id="b_1709051">
+    <!--div class="	section section1121	clip_none 	size_900x700				bg_mode_color" style="	background-color:#ffffff;	padding-top:100px;	padding-bottom:80px;	" data-id="1709051" id="b_1709051">
         <a name="anchor4"></a>	<div class="section_inner">		<div class="wrapp change_place">			<div class="image1 size_900x700">				<img src="/img/900x700/78df2fd933ea5c04d96ba778c1ec38f1.jpg" srcset="/img/900x700/78df2fd933ea5c04d96ba778c1ec38f1.jpg 1x, /img/1800x1400/78df2fd933ea5c04d96ba778c1ec38f1.jpg 2x" width="900px" height="700px" loading="lazy">			</div>			<div class="form_wrapp">				<div class="title" style="margin-bottom:1rem;font-weight:500"><p><span style="font-size:42px"><strong><span style="color:#333333"><span style="font-family:ubuntu">Успейте записаться на прием</span></span></strong></span></p></div>				<div class="sub_title" style="margin-bottom:2rem;font-weight:400"><u>Скидка первым 20-ти записавшимся 20%</u></div>			<div class="form1">				<form action="handler.php" enctype="multipart/form-data" method="post">											<input type="hidden" name="Название формы" value="">
                             <div class="field">
                                 <div class="field_title ">Введите имя</div>
@@ -977,18 +1097,43 @@
                             </div>											<div class="field field-submit"><div class="field_input"><input type="submit" class="submit_btn surround" data-hcolor="#475a64" data-action="thanks" data-metrica_event="" data-fb_pixel="" data-vk_pixel="" data-gtag_event="" data-url="" data-amount="0" data-product_name="" value="Записаться" style="background-color:#f9c000;  border-radius: 0em; box-shadow: 0;  " autocomplete="off"></div></div>									</form>			</div>			<div class="form_text">Нажимая на кнопку, Вы принимаете <a target="_blank" href="/personal-data-1/">Положение</a> и <a target="_blank" href="/personal-data-2/">Согласие</a> на обработку персональных данных.</div>		</div>	</div>
             <div class="popup_thanks">
                 <div class="popup_thanks_inner">
-                    <!--noindex-->
-                    <div class="popup_thanks_close">X</div>
-                    <div class="popup_thanks_title">Спасибо за заявку!</div>
-                    <div class="popup_thanks_text">Заявка отправлена. Наш менеджер свяжется с Вами в ближайшее время.</div>
-                    <!--/noindex-->
+
                 </div>
             </div>
         </div>
-    </div>
+    </div-->
 
-    <div class="	section section119						bg_mode_color" style="	background-color:#f3f3f3;	padding-top:40px;	padding-bottom:40px" data-id="1709052" id="b_1709052">
-        <a name="a_1698412"></a><div class="section_inner all_border all_border width1170">	<div class="logo"><div class="logo_text"><span style="color:#696969"><span style="font-family:montserrat"><strong>YourLogo</strong></span></span></div></div>		<div class="address-and-ua">				<div class="address1">ООО «СтройТрейд», 123456, г.Москва, ул. Центральная 1, офис 1 <br>ИНН 1234567890 ОГРН 123456789012</div>		<div class="policy2">Политика конфиденциальности</div>	</div>	<div class="phone-and-address">		<div class="phones-wrapper" style="--phone-text-color:;--phone-font-size:20px;--phone-font-weight:500;"><div class="phone1 zphone show_phone_icon">8 800 333 22 33</div></div>		<div class="text1">Звонок по России бесплатный</div>		<a target="_blank" href="https://tobiz.net/" class="tobiz_link ">Сделано на платформе TOBIZ.NET</a>					<div class="social_icons icon-circle">				<a target="_blank" style="background:#fff;color:#000;" class="sn sn-vk  link_vk" href=""></a>				<a target="_blank" style="background:#fff;color:#000;" class="sn sn-whatsup  link_whatsup" href=""></a>				<a target="_blank" style="background:#fff;color:#000;" class="sn sn-youtube  hidden link_youtube" href=""></a>				<a target="_blank" style="background:#fff;color:#000;" class="sn sn-vimeo  link_vimeo" href=""></a>				<a target="_blank" style="background:#fff;color:#000;" class="sn sn-rutube  link_rutube" href=""><svg focusable="false" role="img" viewBox="0 0 20 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill="currentColor" d="M13.9025 6H0V21H3.86952V16.1199H11.2841L14.6671 21H19L15.2695 16.0975C16.4281 15.9176 17.2622 15.4903 17.772 14.8156C18.2817 14.141 18.5366 13.0615 18.5366 11.6222V10.4978C18.5366 9.64318 18.444 8.96855 18.2817 8.45125C18.1195 7.93403 17.8415 7.48425 17.4476 7.07946C17.0305 6.69715 16.5671 6.42729 16.011 6.24737C15.4549 6.08995 14.7597 6 13.9025 6ZM13.2769 12.8141H3.86952V9.30582H13.2769C13.8098 9.30582 14.1805 9.3958 14.3659 9.55321C14.5512 9.71062 14.6671 10.003 14.6671 10.4303V11.6897C14.6671 12.1395 14.5512 12.4318 14.3659 12.5892C14.1805 12.7466 13.8098 12.8141 13.2769 12.8141Z"></path></svg></a>				<a target="_blank" style="background:#fff;color:#000;" class="sn sn-zen  link_zen" href=""><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32.143 32.143" width="45" height="45"><path fill="currentColor" d="M19.172 19.172c-2.525 2.605 -2.71 5.855 -2.927 12.971 6.636 0 11.216 -0.023 13.58 -2.319 2.297 -2.364 2.319 -7.163 2.319 -13.58 -7.118 0.23 -10.366 0.402 -12.971 2.927M0 16.243c0 6.417 0.023 11.216 2.319 13.58 2.364 2.297 6.944 2.319 13.58 2.319 -0.23 -7.118 -0.402 -10.366 -2.927 -12.971 -2.605 -2.525 -5.855 -2.71 -12.971 -2.927M15.899 0C9.275 0 4.683 0.023 2.319 2.319 0.023 4.683 0 9.482 0 15.899c7.118 -0.23 10.366 -0.402 12.971 -2.927 2.525 -2.605 2.71 -5.855 2.927 -12.971m3.272 12.971C16.645 10.366 16.462 7.118 16.243 0c6.636 0 11.216 0.023 13.58 2.319 2.297 2.364 2.319 7.163 2.319 13.58 -7.118 -0.23 -10.366 -0.402 -12.971 -2.927"></path></svg></a>				<a target="_blank" style="background:#fff;color:#000;" class="sn sn-o  hidden link_o" href=""></a>				<a target="_blank" style="background:#fff;color:#000;" class="sn sn-viber  hidden link_viber" href=""><svg focusable="false" data-prefix="fab" data-icon="viber" class="svg-inline--fa fa-viber fa-w-16" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M444 49.9C431.3 38.2 379.9.9 265.3.4c0 0-135.1-8.1-200.9 52.3C27.8 89.3 14.9 143 13.5 209.5c-1.4 66.5-3.1 191.1 117 224.9h.1l-.1 51.6s-.8 20.9 13 25.1c16.6 5.2 26.4-10.7 42.3-27.8 8.7-9.4 20.7-23.2 29.8-33.7 82.2 6.9 145.3-8.9 152.5-11.2 16.6-5.4 110.5-17.4 125.7-142 15.8-128.6-7.6-209.8-49.8-246.5zM457.9 287c-12.9 104-89 110.6-103 115.1-6 1.9-61.5 15.7-131.2 11.2 0 0-52 62.7-68.2 79-5.3 5.3-11.1 4.8-11-5.7 0-6.9.4-85.7.4-85.7-.1 0-.1 0 0 0-101.8-28.2-95.8-134.3-94.7-189.8 1.1-55.5 11.6-101 42.6-131.6 55.7-50.5 170.4-43 170.4-43 96.9.4 143.3 29.6 154.1 39.4 35.7 30.6 53.9 103.8 40.6 211.1zm-139-80.8c.4 8.6-12.5 9.2-12.9.6-1.1-22-11.4-32.7-32.6-33.9-8.6-.5-7.8-13.4.7-12.9 27.9 1.5 43.4 17.5 44.8 46.2zm20.3 11.3c1-42.4-25.5-75.6-75.8-79.3-8.5-.6-7.6-13.5.9-12.9 58 4.2 88.9 44.1 87.8 92.5-.1 8.6-13.1 8.2-12.9-.3zm47 13.4c.1 8.6-12.9 8.7-12.9.1-.6-81.5-54.9-125.9-120.8-126.4-8.5-.1-8.5-12.9 0-12.9 73.7.5 133 51.4 133.7 139.2zM374.9 329v.2c-10.8 19-31 40-51.8 33.3l-.2-.3c-21.1-5.9-70.8-31.5-102.2-56.5-16.2-12.8-31-27.9-42.4-42.4-10.3-12.9-20.7-28.2-30.8-46.6-21.3-38.5-26-55.7-26-55.7-6.7-20.8 14.2-41 33.3-51.8h.2c9.2-4.8 18-3.2 23.9 3.9 0 0 12.4 14.8 17.7 22.1 5 6.8 11.7 17.7 15.2 23.8 6.1 10.9 2.3 22-3.7 26.6l-12 9.6c-6.1 4.9-5.3 14-5.3 14s17.8 67.3 84.3 84.3c0 0 9.1.8 14-5.3l9.6-12c4.6-6 15.7-9.8 26.6-3.7 14.7 8.3 33.4 21.2 45.8 32.9 7 5.7 8.6 14.4 3.8 23.6z"></path></svg></a>				<a target="_blank" style="background:#fff;color:#000;" class="sn sn-tg  link_tg" href=""></a>			</div>			</div>	<div class="policy2_popup">		<div class="policy2_title">Политика конфиденциальности</div>		<div class="policy2_body"><p>Данный сайт уважает Ваше право и соблюдает конфиденциальность при заполнении, передаче и хранении Ваших конфиденциальных сведений.<br>Размещение заявки на данном сайте означает Ваше согласие на обработку данных и дальнейшей передачи ваших контактных данных нашей компании.<br>Под персональными данными подразумевается информация, относящаяся к субъекту персональных данных, в частности имя, контактные реквизиты (адрес электронной почты) и иные данные, относимые Федеральным законом от 27 июля 2006 года № 152-ФЗ «О персональных данных» к категории персональных данных.<br>Целью обработки персональных данных является информирование об оказываемых услугах нашей компании.</p></div>	</div>
+    <div class="section section119 bg_mode_color" style="background-color:#f3f3f3; padding-top:40px; padding-bottom:40px" data-id="1709052" id="b_1709052">
+        <a name="a_1698412"></a>
+        <div class="section_inner all_border all_border width1170">
+            <div class="logo">
+                <!--div class="logo_text"><span style="color:#696969"><span style="font-family:montserrat"><strong>YourLogo</strong></span></span></div-->
+                <div class="logo_img"><img src="/assets/img/logo_top.png" loading="lazy"></div>
+            </div>
+            <div class="address-and-ua">
+                <div class="address1">АН "Солнечный город", 123456, Краснодарский край, ст. Старонижестеблиевская ......<br>ИНН 1234567890 ОГРН 123456789012</div>
+                <div class="policy2">Политика конфиденциальности</div>
+            </div>
+            <div class="phone-and-address">
+                <div class="phones-wrapper" style="--phone-text-color:;--phone-font-size:20px;--phone-font-weight:500;">
+                    <div class="phone1 zphone show_phone_icon">8 800 333 22 33</div>
+                </div>
+                <div class="text1">Звонок по России бесплатный</div>
+
+                <div class="social_icons icon-circle">
+                    <a target="_blank" style="background:#fff;color:#000;" class="sn sn-whatsup  link_whatsup" href=""></a>
+                    <a target="_blank" style="background:#fff;color:#000;" class="sn sn-tg  link_tg" href=""></a>
+                </div>
+            </div>
+            <div class="policy2_popup">
+                <div class="policy2_title">Политика конфиденциальности</div>
+                <div class="policy2_body">
+                    <p>Данный сайт уважает Ваше право и соблюдает конфиденциальность при заполнении, передаче и хранении Ваших конфиденциальных сведений.<br>
+                        Размещение заявки на данном сайте означает Ваше согласие на обработку данных и дальнейшей передачи ваших контактных данных нашей компании.<br>
+                        Под персональными данными подразумевается информация, относящаяся к субъекту персональных данных, в частности имя, контактные реквизиты (адрес электронной почты) и иные данные, относимые Федеральным законом от 27 июля 2006 года № 152-ФЗ «О персональных данных» к категории персональных данных.<br>
+                        Целью обработки персональных данных является информирование об оказываемых услугах нашей компании.</p>
+                </div>
+            </div>
         </div>
     </div>
 
