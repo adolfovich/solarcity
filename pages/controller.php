@@ -18,9 +18,9 @@ if (isset($url[1])) {
 if (isset($user_id)) {
   $auth_user = $db->getRow("SELECT * FROM `users` WHERE `id` = ?i", $user_id);
   $user_data = $auth_user;
-  $employe = $db->getRow("SELECT * FROM `employees` WHERE `user_id` = ?i", $user_id);
+  //$employe = $db->getRow("SELECT * FROM `employees` WHERE `user_id` = ?i", $user_id);
   
-  $user_profile = $db->getRow("SELECT * FROM `profiles` WHERE `id` = ?i", $user_data['profile']);
+  //$user_profile = $db->getRow("SELECT * FROM `profiles` WHERE `id` = ?i", $user_data['profile']);
 }
 
 header("Cache-Control: no cache");
@@ -28,7 +28,9 @@ header("Cache-Control: no cache");
 
 //var_dump($url[0]);
 
-if ($url[0] == '' || $url[0] != 'cab') {
+//var_dump($url[0] == '' || $url[0] != 'cab' || $url[0] != 'login');
+
+if ($url[0] == '' || ($url[0] != 'cab' && $url[0] != 'login')) {
     if ($url[0] != '') {
         if (file_exists('pages/site/'.$url[0].'.php')) {
             include ('pages/site/'.$url[0].'.php');
@@ -38,13 +40,11 @@ if ($url[0] == '' || $url[0] != 'cab') {
     } else {
         include ('pages/site/default.php');
     }
-}
-/*
-if ($url[0] == 'cab') {
+} else if ($url[0] == 'login') {
+    include ('pages/cab/login.php');
+} else if ($url[0] == 'cab') {
   include ('pages/cab/template.php');
-} else if ($url[0] == 'video') {
-  include ('pages/video.php');
-} else {
+}  else {
   //include ('pages/cab/login.php');
   include ('pages/site/default.php');
-}*/
+}

@@ -250,13 +250,13 @@ class Core
      return json_encode($response);
    }
 
-  public function ticketLog($ticket_id, $uder_id, $text, $photo = '')
+  /*public function ticketLog($ticket_id, $uder_id, $text, $photo = '')
   {
     global $db;
 	
 	//if ($photo = ' ') $photo = NULL;
     $db->query("INSERT INTO `tickets_log` SET `ticket_id` = ?i, `user_id` = ?i, `text` = ?s, attachments = ?s", $ticket_id, $uder_id, $text, $photo);
-  }
+  }*/
 
   public function getTicketStatusInfo($id)
   {

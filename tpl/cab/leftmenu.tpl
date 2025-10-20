@@ -6,9 +6,7 @@
       </button>
       <!-- Brand -->
 	  
-	  <?php if($auth_user['profile'] == 150) { ?>
-      <a class="btn btn-primary" href="#" data-toggle="modal" data-target="#dayReportModal"><i class="fas fa-file" aria-hidden="true"></i> Дневной отчет</a>
-	  <?php } ?>
+
       <span><?=$page_name?></span>
       <!-- User -->
       <ul class="nav align-items-center d-md-none">
@@ -91,14 +89,13 @@
         <!-- Navigation -->
         <ul class="navbar-nav">
           <?php foreach ($menu as $value) { ?>
-            <?php $access_arr = explode(',', $user_profile['access']); ?>
-            <?php if (in_array($value['id'], $access_arr)) { ?>
+
             <li class="nav-item">
               <a class="nav-link" href="<?=$value['url']?>">
                 <i class="<?=$value['i']?>"></i> <?=$value['name']?>
               </a>
             </li>
-            <?php } ?>
+
           <?php } ?>
         </ul>
         <!-- Divider -->

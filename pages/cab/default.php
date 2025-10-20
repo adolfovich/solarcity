@@ -1,5 +1,5 @@
 <script language="javascript" type="text/javascript">
-document.location="/cab/tickets"; 
+document.location="/cab/objects";
 </script>
 
 <?php
