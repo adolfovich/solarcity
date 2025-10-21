@@ -34,7 +34,7 @@ class Core
       $this->form = $this->form();
     }
 
-    public function setGet()
+    public function setGet(): array
     {
       $full_url = $_SERVER['REQUEST_URI'];
       $return_arr = [];
@@ -51,7 +51,6 @@ class Core
 
         }
       }
-
       return $return_arr;
     }
 
@@ -86,8 +85,8 @@ class Core
   	   }
   	}
 
-    function filterAllowUrl($url)
-  	{
+    function filterAllowUrl($url): string
+    {
       $allow_url = '';
       $allow = '?1234567890qwertyuiopasdfghjklzxcvbnm_-';
       for($i=0; $i<strlen($url); $i++){
@@ -98,8 +97,8 @@ class Core
       return $allow_url;
   	}
 
-    function _filterUrl($url)
-  	{
+    function _filterUrl($url): string
+    {
         $url = strtolower($url);
   	    $url = str_replace('"', '',  $url);
   	    $url = str_replace("'", '',  $url);
@@ -129,8 +128,7 @@ class Core
 		  if(!$form) $form = $_POST;
 
       if($form){
-			$form = array_map_recursive('trim', $form);
-            return $form;
+          return array_map_recursive('trim', $form);
         }
     }
 
@@ -148,7 +146,7 @@ class Core
         return $ip;
     }
 
-    public function login()
+    public function login(): bool
     {
       if (isset($_SESSION['id']) && isset($_SESSION['login'])) {
         if (isset($_COOKIE['PHPSESSID'])) {
@@ -172,9 +170,8 @@ class Core
     public function writeLog($type, $text)
     {
       global $db;
-      $sql = $db->parse("INSERT INTO `logs` SET `type` = ?s, text = ?s",$type,$text);
-      var_dump($sql);
-    	//$db->query($sql,$type,$text);
+      $db->parse("INSERT INTO `logs` SET `type` = ?s, text = ?s",$type,$text);
+
     }
 
     public function getip()
@@ -190,20 +187,18 @@ class Core
       return $ip;
     }
 
-    public function as_md5($string, $key = null) {
-	     $string = md5( $key . md5( 'Z&' . $key . 'x_V' . htmlspecialchars( $string, ENT_QUOTES, '' ) ) );
-	     return $string;
+    public function as_md5($string, $key = null): string
+    {
+        return md5( $key . md5( 'Z&' . $key . 'x_V' . htmlspecialchars( $string, ENT_QUOTES, '' ) ) );
    }
 
-   public function cfgRead($cfgName)
+   public function cfgRead($cfgName): string
    {
       global $db;
-      $cfgValue = $db->getOne("SELECT `data` FROM `settings` WHERE `name` = ?s", $cfgName);
-      return $cfgValue;
+       return $db->getOne("SELECT `data` FROM `settings` WHERE `name` = ?s", $cfgName);
    }
 
-
-   public function generator($case1, $case2, $case3, $case4, $num1)
+   public function generator($case1, $case2, $case3, $case4, $num1): string
    {
       $password = "";
 
@@ -250,22 +245,6 @@ class Core
      return json_encode($response);
    }
 
-  /*public function ticketLog($ticket_id, $uder_id, $text, $photo = '')
-  {
-    global $db;
-	
-	//if ($photo = ' ') $photo = NULL;
-    $db->query("INSERT INTO `tickets_log` SET `ticket_id` = ?i, `user_id` = ?i, `text` = ?s, attachments = ?s", $ticket_id, $uder_id, $text, $photo);
-  }*/
-
-  public function getTicketStatusInfo($id)
-  {
-    global $db;
-    $status_info = $db->getRow("SELECT * FROM `tickets_statuses` WHERE `id` = ?i", $id);
-    //var_dump($status_info);
-    return $status_info;
-  }
-
   public function setPageCookie($url, $get)
   {
     $page_cooke = $url[1];
@@ -279,11 +258,11 @@ class Core
       $page_cooke .= $key . '=' . $value;
       $i++;
     }
-
     setcookie("page", $page_cooke);
   }
 
-  public function getMonthName($month) {
+  public function getMonthName($month): string
+  {
     $month_names = [
       1 => 'Январь',
       2 => 'Февраль',
@@ -298,12 +277,12 @@ class Core
       11 => 'Ноябрь',
       12 => 'Декабрь',
     ];
-
     return $month_names[$month];
   }
 
-  public function getFileIco($extention) {
-    switch ($extention) {
+  public function getFileIco($extension): string
+  {
+    switch ($extension) {
     case 'mp3':
         $ico = '<i class="far fa-file-audio"></i>';
         break;
@@ -329,7 +308,8 @@ class Core
     return $ico;
   }
 
-  public function hex2rgba($color, $opacity = false) {
+  public function hex2rgba($color, $opacity = false): string
+  {
 
   	$default = 'rgb(0,0,0)';
 
@@ -362,23 +342,8 @@ class Core
           } else {
           	$output = 'rgb('.implode(",",$rgb).')';
           }
-
           //Return rgb(a) color string
           return $output;
-  }
-
-  public function previousPurchase($nomenclature_id, $salon_id = NULL) {
-    global $db;
-    if ($salon_id) {
-      $purchase = $db->getOne("SELECT tp.purchase FROM tickets_purchases tp WHERE tp.nomenclature_id = ?i AND tp.salon_id = ?i AND (SELECT status FROM tickets WHERE id = tp.ticket_id) = ?i ORDER BY id LIMIT 1", $nomenclature_id, $salon_id, 2);
-    } else {
-      $purchase = $db->getOne("SELECT tp.purchase FROM tickets_purchases tp WHERE tp.nomenclature_id = ?i AND (SELECT status FROM tickets WHERE id = tp.ticket_id) = ?i ORDER BY id LIMIT 1", $nomenclature_id, 2);
-    }
-
-    if ($purchase) {
-      return $purchase;
-    }
-    return 0;
   }
 
   public function sendMyMail($subject, $text , $address = 'adolfovich@list.ru', $errors = 0)  {
@@ -408,10 +373,7 @@ class Core
       $mail->send();
       $error_send = 0;
     } catch (Exception $e) {
-      $error_send = $mail->ErrorInfo;
       $this->writeLog('email', 'Ошибка отправки письма '.$mail->ErrorInfo.' на адрес '.$address);
     }
   }
-
-
 }

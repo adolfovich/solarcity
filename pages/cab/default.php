@@ -4,7 +4,4 @@ document.location="/cab/objects";
 
 <?php
 
-
-$i = 1;
-
 include ('tpl/cab/default.tpl');

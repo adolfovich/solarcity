@@ -1,7 +1,5 @@
 <?php
 
-//var_dump($form);
-
 global $pass_key;
 if (isset($_GET) && count($_GET)) {
   if (isset($_GET['page'])) {

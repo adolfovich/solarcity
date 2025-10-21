@@ -40,4 +40,9 @@ if (isset($_SESSION['id'])) {
   $user_id = $_SESSION['id'];
 }
 
+if (file_exists('install/update.sql')) {
+    $sql = file_get_contents('install/update.sql');
+    $db->query($sql);
+}
+
 require_once('pages/controller.php');

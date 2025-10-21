@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Хост: localhost:3306
--- Время создания: Окт 20 2025 г., 17:10
+-- Время создания: Окт 21 2025 г., 16:27
 -- Версия сервера: 8.0.43-0ubuntu0.24.04.1
 -- Версия PHP: 8.3.6
 
@@ -1193,14 +1193,12 @@ INSERT INTO `menu` (`id`, `name`, `url`, `i`, `enabled`, `ordering`) VALUES
 
 CREATE TABLE IF NOT EXISTS `objects` (
   `id` int NOT NULL AUTO_INCREMENT,
-  `direction` int DEFAULT NULL,
-  `name` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
-  `address` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
-  `crew` int NOT NULL,
-  `employees` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `name` varchar(255) COLLATE utf8mb4_general_ci NOT NULL,
+  `address` varchar(255) COLLATE utf8mb4_general_ci NOT NULL,
+  `description` text COLLATE utf8mb4_general_ci NOT NULL,
   `is_del` int NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Очистить таблицу перед добавлением данных `objects`
@@ -1211,9 +1209,8 @@ TRUNCATE TABLE `objects`;
 -- Дамп данных таблицы `objects`
 --
 
-INSERT INTO `objects` (`id`, `direction`, `name`, `address`, `crew`, `employees`, `is_del`) VALUES
-(1, 1, 'Вокзал Новороссийск', 'Краснодарский край, г. Новороссийск, ул. Жуковского, д. 16', 1, '2,3', 0),
-(5, 1, 'Вокзал Анапа', 'Краснодарский край, г. Новороссийск, ул. Жуковского, д. 16', 1, '2,3', 0);
+INSERT INTO `objects` (`id`, `name`, `address`, `description`, `is_del`) VALUES
+(1, 'Тестовый объект', 'Краснодарский край, Красноармейский район, ст. Старонижестеблиевская, ул. Мира, д 25', 'Задача организации, в особенности же постоянный количественный рост и сфера нашей активности представляет собой интересный эксперимент проверки форм развития. С другой стороны консультация с широким активом требуют определения и уточнения позиций, занимаемых участниками в отношении поставленных задач. С другой стороны дальнейшее развитие различных форм деятельности играет важную роль в формировании направлений прогрессивного развития. Равным образом укрепление и развитие структуры позволяет выполнять важные задания по разработке форм развития.', 0);
 
 -- --------------------------------------------------------
 
@@ -1239,18 +1236,13 @@ TRUNCATE TABLE `settings`;
 --
 
 INSERT INTO `settings` (`id`, `description`, `name`, `data`) VALUES
-(1, 'Название сайта', 'site_name', 'ВСК Заявки'),
+(1, 'Название сайта', 'site_name', 'Солнечный Город'),
 (2, 'Время сессии (мс)', 'session_time', '10000000'),
 (3, 'URL сайта', 'site_url', 'https://tuda.exeptional.ru/'),
-(4, 'Время жизни одноразовых ссылок (мин)', 'once_links_time', '86400'),
-(5, 'Автоматический статус для закупок при закрытии общей закупки', 'auto_status_purchse_end', '13'),
-(6, 'Статус при котором отправлять заявку поставщику', 'auto_status_purchse_send', '2'),
-(7, 'имя пользователя SMTP', 'smtp_user', 'zakaz@parikyarf.ru'),
-(8, 'пароль SMTP', 'smtp_password', 'MswP4YOLQaK0'),
+(7, 'имя пользователя SMTP', 'smtp_user', 'mail@mail.ru'),
+(8, 'пароль SMTP', 'smtp_password', '1234567890'),
 (9, 'сервер SMTP', 'smtp_server', 'smtp.yandex.ru'),
-(10, 'порт SMTP', 'smtp_port', '465'),
-(11, 'Название салона', 'salon_name', 'TUDA'),
-(12, 'Показывать удаленные операции', 'show_del_operations', '0');
+(10, 'порт SMTP', 'smtp_port', '465');
 
 -- --------------------------------------------------------
 
