@@ -34,6 +34,22 @@ class Core
       $this->form = $this->form();
     }
 
+    public function sanitizeGet($key, $default = '') {
+        if (!isset($_GET[$key])) {
+            return $default;
+        }
+
+        $value = $_GET[$key];
+
+        // Удаляем пробелы в начале и конце
+        $value = trim($value);
+
+        // Экранируем специальные символы HTML
+        $value = htmlspecialchars($value, ENT_QUOTES | ENT_HTML5, 'UTF-8');
+
+        return $value;
+    }
+
     public function setGet(): array
     {
       $full_url = $_SERVER['REQUEST_URI'];
@@ -375,5 +391,11 @@ class Core
     } catch (Exception $e) {
       $this->writeLog('email', 'Ошибка отправки письма '.$mail->ErrorInfo.' на адрес '.$address);
     }
+  }
+
+  public function getObjectMasterPhoto($object_id)
+  {
+      global $db;
+      return $db->getOne("SELECT path FROM objects_photo WHERE object_id = ?i AND is_master = 1", $object_id);
   }
 }

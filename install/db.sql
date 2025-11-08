@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Хост: localhost:3306
--- Время создания: Окт 21 2025 г., 16:27
+-- Время создания: Ноя 08 2025 г., 16:59
 -- Версия сервера: 8.0.43-0ubuntu0.24.04.1
 -- Версия PHP: 8.3.6
 
@@ -20,6 +20,32 @@ SET time_zone = "+00:00";
 --
 -- База данных: `solarcity`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Структура таблицы `categories`
+--
+
+CREATE TABLE IF NOT EXISTS `categories` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `name` varchar(255) COLLATE utf8mb4_general_ci NOT NULL,
+  `ordering` int NOT NULL DEFAULT '100',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Очистить таблицу перед добавлением данных `categories`
+--
+
+TRUNCATE TABLE `categories`;
+--
+-- Дамп данных таблицы `categories`
+--
+
+INSERT INTO `categories` (`id`, `name`, `ordering`) VALUES
+(1, 'Продажа', 1),
+(2, 'Аренда', 2);
 
 -- --------------------------------------------------------
 
@@ -1193,12 +1219,20 @@ INSERT INTO `menu` (`id`, `name`, `url`, `i`, `enabled`, `ordering`) VALUES
 
 CREATE TABLE IF NOT EXISTS `objects` (
   `id` int NOT NULL AUTO_INCREMENT,
+  `date_add` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `name` varchar(255) COLLATE utf8mb4_general_ci NOT NULL,
   `address` varchar(255) COLLATE utf8mb4_general_ci NOT NULL,
   `description` text COLLATE utf8mb4_general_ci NOT NULL,
+  `price` int NOT NULL DEFAULT '0',
+  `address_approx` varchar(255) COLLATE utf8mb4_general_ci DEFAULT NULL,
+  `area_premises` float DEFAULT NULL,
+  `area_plot` float DEFAULT NULL,
+  `category` int DEFAULT NULL,
+  `type` int DEFAULT NULL,
+  `comment` text COLLATE utf8mb4_general_ci,
   `is_del` int NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Очистить таблицу перед добавлением данных `objects`
@@ -1209,8 +1243,67 @@ TRUNCATE TABLE `objects`;
 -- Дамп данных таблицы `objects`
 --
 
-INSERT INTO `objects` (`id`, `name`, `address`, `description`, `is_del`) VALUES
-(1, 'Тестовый объект', 'Краснодарский край, Красноармейский район, ст. Старонижестеблиевская, ул. Мира, д 25', 'Задача организации, в особенности же постоянный количественный рост и сфера нашей активности представляет собой интересный эксперимент проверки форм развития. С другой стороны консультация с широким активом требуют определения и уточнения позиций, занимаемых участниками в отношении поставленных задач. С другой стороны дальнейшее развитие различных форм деятельности играет важную роль в формировании направлений прогрессивного развития. Равным образом укрепление и развитие структуры позволяет выполнять важные задания по разработке форм развития.', 0);
+INSERT INTO `objects` (`id`, `date_add`, `name`, `address`, `description`, `price`, `address_approx`, `area_premises`, `area_plot`, `category`, `type`, `comment`, `is_del`) VALUES
+(1, '2025-10-23 16:57:54', 'Частный дом ЗБС13', 'Краснодарский край, Красноармейский район, ст. Старонижестеблиевская, ул. Мира, д 25', 'Задача организации, в особенности же постоянный количественный рост и сфера нашей активности представляет собой интересный эксперимент проверки форм развития.', 1000000, 'Краснодарский край, Красноармейский район, ст. Старонижестеблиевская, ул. Мира', 100, 8, 1, 2, 'Коммент для системы', 0);
+
+-- --------------------------------------------------------
+
+--
+-- Структура таблицы `objects_photo`
+--
+
+CREATE TABLE IF NOT EXISTS `objects_photo` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `object_id` int NOT NULL,
+  `path` varchar(255) COLLATE utf8mb4_general_ci NOT NULL,
+  `is_master` int NOT NULL DEFAULT '0',
+  `is_del` int NOT NULL DEFAULT '0',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Очистить таблицу перед добавлением данных `objects_photo`
+--
+
+TRUNCATE TABLE `objects_photo`;
+--
+-- Дамп данных таблицы `objects_photo`
+--
+
+INSERT INTO `objects_photo` (`id`, `object_id`, `path`, `is_master`, `is_del`) VALUES
+(1, 1, '/img/sample.jpg', 1, 0),
+(2, 1, '/img/sample.jpg', 0, 0),
+(3, 1, '/img/sample.jpg', 0, 0),
+(5, 1, '/img/photo/690f7518b8add.png', 0, 1),
+(6, 1, '/img/photo/690f7518bb773.png', 0, 0);
+
+-- --------------------------------------------------------
+
+--
+-- Структура таблицы `objects_types`
+--
+
+CREATE TABLE IF NOT EXISTS `objects_types` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `name` varchar(255) COLLATE utf8mb4_general_ci NOT NULL,
+  `ordering` int NOT NULL DEFAULT '100',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Очистить таблицу перед добавлением данных `objects_types`
+--
+
+TRUNCATE TABLE `objects_types`;
+--
+-- Дамп данных таблицы `objects_types`
+--
+
+INSERT INTO `objects_types` (`id`, `name`, `ordering`) VALUES
+(1, 'Квартира', 100),
+(2, 'Частный дом', 100),
+(3, 'Участок', 100),
+(4, 'Коммерческая недвижимость', 100);
 
 -- --------------------------------------------------------
 
