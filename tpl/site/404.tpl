@@ -13,30 +13,47 @@
         
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
             min-height: 100vh;
             display: flex;
             justify-content: center;
             align-items: center;
-            color: white;
+            color: #495057;
         }
         
         .container {
             text-align: center;
             padding: 2rem;
-            background: rgba(255, 255, 255, 0.1);
+            background: rgba(255, 255, 255, 0.95);
             backdrop-filter: blur(10px);
             border-radius: 20px;
-            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
             max-width: 600px;
             margin: 0 auto;
+            border: 1px solid rgba(233, 236, 239, 0.5);
+        }
+        
+        .logo {
+            margin-bottom: 2rem;
+        }
+        
+        .logo img {
+            max-width: 200px;
+            height: auto;
+            filter: grayscale(20%) opacity(0.9);
+            transition: transform 0.3s ease;
+        }
+        
+        .logo img:hover {
+            transform: scale(1.05);
         }
         
         .error-code {
             font-size: 10rem;
             font-weight: 800;
             margin-bottom: 1rem;
-            text-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            color: #6c757d;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
             animation: pulse 2s infinite;
         }
         
@@ -44,17 +61,19 @@
             font-size: 2rem;
             margin-bottom: 2rem;
             font-weight: 600;
+            color: #495057;
         }
         
         .funny-text {
             font-size: 1.2rem;
             margin-bottom: 2rem;
             line-height: 1.6;
+            color: #6c757d;
             opacity: 0.9;
         }
         
         .home-button {
-            background: linear-gradient(45deg, #ff6b6b, #ff8e53);
+            background: linear-gradient(45deg, #6c757d, #868e96);
             border: none;
             padding: 1rem 2rem;
             font-size: 1.2rem;
@@ -62,14 +81,16 @@
             border-radius: 50px;
             cursor: pointer;
             transition: all 0.3s ease;
-            box-shadow: 0 4px 15px rgba(255, 107, 107, 0.4);
+            box-shadow: 0 4px 15px rgba(108, 117, 125, 0.3);
             position: relative;
             overflow: hidden;
+            color: white;
         }
         
         .home-button:hover {
             transform: translateY(-3px);
-            box-shadow: 0 6px 20px rgba(255, 107, 107, 0.6);
+            box-shadow: 0 6px 20px rgba(108, 117, 125, 0.4);
+            background: linear-gradient(45deg, #5a6268, #727b84);
         }
         
         .home-button:active {
@@ -77,7 +98,7 @@
         }
         
         .home-button::before {
-            content: '🚀';
+            content: '🏠';
             margin-right: 8px;
             animation: bounce 1s infinite;
         }
@@ -96,6 +117,7 @@
             font-size: 2rem;
             margin: 1rem 0;
             animation: float 3s ease-in-out infinite;
+            color: #868e96;
         }
         
         @keyframes float {
@@ -115,11 +137,19 @@
             .container {
                 padding: 1.5rem;
             }
+            
+            .logo img {
+                max-width: 150px;
+            }
         }
     </style>
 </head>
 <body>
     <div class="container">
+        <!-- Место для логотипа - замените src на путь к вашему логотипу -->
+        <div class="logo">
+            <img src="logo.png" alt="Логотип">
+        </div>
         <div class="error-code">404</div>
         <div class="emoji">😅</div>
         <div class="error-message">Страница потерялась!</div>
@@ -134,3 +164,4 @@
     </div>
 </body>
 </html>
+
