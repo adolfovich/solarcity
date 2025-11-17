@@ -26,9 +26,9 @@
             <i class="ni ni-single-02"></i>
             <span>My profile</span>
           </a>
-          <a href="./examples/profile.html" class="dropdown-item">
+          <a href="settings" class="dropdown-item">
             <i class="ni ni-settings-gear-65"></i>
-            <span>Settings</span>
+            <span>Настройки сайта</span>
           </a>
           <a href="./examples/profile.html" class="dropdown-item">
             <i class="ni ni-calendar-grid-58"></i>
