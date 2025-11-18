@@ -3,12 +3,8 @@
 $object_types = $db->getAll("SELECT * FROM objects_types ORDER BY ordering");
 $object_categories = $db->getAll("SELECT * FROM categories ORDER BY ordering");
 
-//var_dump($_SERVER['REQUEST_METHOD']);
-//var_dump($_POST);
-
 
 if (isset($_POST['name'])) {
-    //var_dump($_POST);
 
     $object['name'] = $_POST['name'];
     $object['type'] = $_POST['type'];
@@ -41,7 +37,6 @@ if (isset($_POST['name'])) {
         $msg['text'] = 'Площадь помещения не указана';
     } else {
 
-
         if (isset($_POST['new'])) {
             $db->query("INSERT INTO objects SET ?u", $object);
             $object_id = $db->insertId();
@@ -50,14 +45,9 @@ if (isset($_POST['name'])) {
             $object_id = $_GET['id'];
         }
 
-
-        //var_dump($new_object_id);
-
         //$core->jsredir('object?id='.$object_id);
     }
 }
-
-
 
 if (isset($_GET['action']) && $_GET['action'] == 'new') {
 
@@ -100,24 +90,16 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_FILES['photos'])) {
 
     foreach ($_FILES['photos']['tmp_name'] as $key => $tmpName) {
 
-        //echo '<br>ФАЙЛ<br>';
-        //var_dump($_FILES['photos']['error'][$key]);
         if ($_FILES['photos']['error'][$key] === UPLOAD_ERR_OK) {
             $fileName = $_FILES['photos']['name'][$key];
             $fileSize = $_FILES['photos']['size'][$key];
             $fileType = $_FILES['photos']['type'][$key];
-
-            //var_dump($fileSize);
-
-            //echo '<br>1<br>';
 
             // Проверка размера
             if ($fileSize > $maxSize) {
                 echo "Файл $fileName слишком большой<br>";
                 continue;
             }
-
-            //echo '<br>размер соответствует<br>';
 
             // Проверка типа
             $allowed = ['image/jpeg', 'image/jpg', 'image/png'];
@@ -126,16 +108,22 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_FILES['photos'])) {
                 continue;
             }
 
-            //echo '<br>тип соответствует<br>';
-
             // Генерируем новое имя и сохраняем
             $ext = pathinfo($fileName, PATHINFO_EXTENSION);
             $newName = uniqid() . '.' . $ext;
             $uploadPath = $uploadDir . $newName;
 
             if (move_uploaded_file($tmpName, $uploadPath)) {
-                //echo "Файл $fileName успешно загружен<br>";
-                $db->query("INSERT INTO objects_photo SET object_id = ?i, path = ?s", $_GET['id'], '/'.$uploadPath);
+
+                $master_photo = $db->getOne("SELECT is_master FROM objects_photo WHERE object_id = ?i", $_GET['id']);
+
+                if ($master_photo) {
+                    $is_master = 0;
+                } else {
+                    $is_master = 1;
+                }
+
+                $db->query("INSERT INTO objects_photo SET object_id = ?i, path = ?s, is_master = ?i", $_GET['id'], '/'.$uploadPath, $is_master);
             }
 
 
@@ -149,8 +137,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_FILES['photos'])) {
 
             $objects_photo = $db->getAll("SELECT * FROM objects_photo WHERE object_id = ?i AND is_del = 0", $_GET['id']);
 
-            //var_dump($objects_photo);
-
             $title = 'Редактирование объекта:<br>'.$object['name'];
 
         } else {
@@ -161,12 +147,5 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_FILES['photos'])) {
     } else {
         $core->jsredir('objects');
     }
-
-//var_dump($_FILES);
-
-
-
-
-//var_dump($object);
 
 include ('tpl/cab/object.tpl');

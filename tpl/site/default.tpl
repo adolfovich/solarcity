@@ -543,7 +543,7 @@
             </div>
             <div class="menu-and-phone-and-btn">
                 <div class="phones-wrapper" style="--phone-text-color:;--phone-font-size:20px;--phone-font-weight:500;">
-                    <div class="phone1 zphone show_phone_icon"><a href="tel:88003332233">8 800 333 22 33</a></div>
+                    <div class="phone1 zphone show_phone_icon"><a href="tel:<?=$core->cfgRead('site_phone')?>"><?=$core->cfgRead('site_phone')?></a></div>
                 </div>
                 <div style="color:#000;background-color:rgba(0,0,0,0)" class="menu_mobile_btn square new_burger">
                     <svg><use xlink:href="/img/menu_burger.svg#menu"></use></svg>
@@ -551,8 +551,36 @@
                 <div class="menu1" style="font-size:16px;background-color:#fff;color:#333333;font-weight:300">
                     <ul>
                         <li class="level0 "><a href="#anchor1" title="ПОЧЕМУ МЫ">ПОЧЕМУ МЫ</a></li>
-                        <li class="level0 "><a href="#anchor3" title="СПЕЦИАЛИСТЫ">КАТАЛОГ</a></li>
+                        <li class="level0 ">
+                            <a href="#anchor3" title="КАТАЛОГ" onmouseover="showMenu('catalog')">КАТАЛОГ</a>
+                            <div class="new_menu catalog" onmouseout="hideMenu('catalog')" style="display: none; position: absolute; background: #fff; z-index: 1; -webkit-box-shadow: 0px 8px 11px 6px rgba(34, 60, 80, 0.2);
+-moz-box-shadow: 0px 8px 11px 6px rgba(34, 60, 80, 0.2); box-shadow: 0px 8px 11px 6px rgba(34, 60, 80, 0.2); margin-top: 10px; margin-left: 30px;">
+                                <ul style="padding: 20px;">
+                                    <?php foreach($objects_types as $objects_type) {?>
+                                            <li class="level1 " style="margin-top: 10px;"><a style="padding-top: 10px; text-transform: uppercase; text-decoration: none;" href="/catalog?type=<?=$objects_type['id']?>"><?=$objects_type['name']?></a></li>
+
+                                    <?php } ?>
+                                </ul>
+                            </div>
+                            <script>
+                                function showMenu(name){
+                                    $("."+name).show();
+                                }
+                                function hideMenu(name) {
+                                    $("."+name).on("mouseout", function(e) {
+                                        // Проверяем, находится ли курсор вне родительского элемента и его дочерних элементов
+                                        if (!$(e.relatedTarget).closest($("."+name)).length) {
+                                            // Код, который будет выполнен, если курсор ушел из области элемента
+                                            $("."+name).hide();
+                                            console.log("Курсор ушел из элемента");
+                                        }
+                                    });
+
+                                }
+                            </script>
+                        </li>
                         <li class="level0 "><a href="#anchor4" title="КОНТАКТЫ">КОНТАКТЫ</a></li>
+                        <li class="level0 "><a href="/cab" title="КАБИНЕТ">КАБИНЕТ</a></li>
                     </ul>
                 </div>
             </div>
@@ -1116,7 +1144,7 @@
             </div>
             <div class="phone-and-address">
                 <div class="phones-wrapper" style="--phone-text-color:;--phone-font-size:20px;--phone-font-weight:500;">
-                    <div class="phone1 zphone show_phone_icon">8 800 333 22 33</div>
+                    <div class="phone1 zphone show_phone_icon"><a href="tel:<?=$core->cfgRead('site_phone')?>"><?=$core->cfgRead('site_phone')?></a></div>
                 </div>
                 <div class="text1">Звонок по России бесплатный</div>
 
