@@ -543,7 +543,9 @@
                 <div class="sub_title dark" style="margin-bottom:24px;font-weight:400">
                     <p>Мы понимаем, что покупка или продажа жилья — это не просто сделка, а важный шаг на пути к вашей мечте. Поэтому мы делаем процесс простым, прозрачным и безопасным.</p>
                 </div>
+                <!--
                 <div class="btn1 surround" data-hcolor="#475a64" style="background-color:#f9c000;  border-radius: 0em;   box-shadow: 0;  font-size: 20px;   ">Оставить заявку сейчас</div>
+                -->
             </div>
             <div class="popup_form">
                 <div class="popup_form_inner">
@@ -601,7 +603,8 @@
                 <div class="right top_left size_700x500">
                     <div class="bg_right" style="opacity:1;background:#F2F2F2"></div>
                     <div class="title1" style="margin-bottom:1rem;font-weight:500"><strong><span style="font-size:26px"><span style="color:#000000"><span style="font-family:montserrat">О НАШЕЙ КОМПАНИИ</span></span></span></strong></div>				<div class="txt1">
-                        <span style="color:#333333"></span><p>Описание компании нужно вставить сюда тем же шрифтом и тем же Описание компании нужно вставить сюда тем же шрифтом и тем же размером текста.&nbsp;Описание компании нужно вставить сюда тем же шрифтом и тем же размером текста.</p>
+                        <span style="color:#333333"></span>
+                        <p>Ваш надёжный проводник на рынке жилой и коммерческой недвижимости, где мечты о новом доме становятся реальностью. Мы специализируемся на комплексном обслуживании: от подбора, покупки, продажи и аренды квартир, домов и офисов до юридического сопровождения сделок и консультаций по ипотеке. Наша команда профессионалов с глубоким знанием местного рынка и искренней заботой о клиентах гарантирует прозрачность, безопасность и максимально выгодные условия каждой операции. «Солнечный город» — это не просто сделка, это тёплое, солнечное начало вашей новой жизни в идеальном пространстве.</p>
                         <span style="color:#333333"></span>
                     </div>				<div class="btn1 surround" data-hcolor="#475a64" style="background-color:#f9c000;  border-radius: 0em;   box-shadow: 0;  font-size: 18px;   ">ОСТАВИТЬ ЗАЯВКУ</div>
                     <div class="popup_form">
@@ -732,28 +735,28 @@
             <div class="arr1">
                 <div class="col_2">
                     <div class="overlay_image_box">
-                        <div class="overlay_image_title title1"><span style="font-size:22px">#1 – <span style="font-family:ubuntu,sans-serif;">Преимущества работы с вашей компанией</span></span></div>
-                        <div class="overlay_image_subtitle subtitle1"><p>Подробное описание этого преимущества в идеальном соотношении - это текст в 2 строчки. Так выглядеть текст будет максимально элегантно.</p></div>
+                        <div class="overlay_image_title title1"><span style="font-size:22px">#1 – <span style="font-family:ubuntu,sans-serif;">Экспертиза на местном рынке</span></span></div>
+                        <div class="overlay_image_subtitle subtitle1"><p>Наши специалисты обладают глубинными знаниями о каждом районе, что позволяет не только найти объект, но и предсказать потенциал его стоимости и комфорта жизни.</p></div>
                     </div>
                 </div>
                 <div class="col_2 last">
                     <div class="overlay_image_box">
-                        <div class="overlay_image_title title2"><span style="font-size:22px">#2 –&nbsp;<span style="font-family:ubuntu">Еще преимущества работы с Вами</span></span></div>
-                        <div class="overlay_image_subtitle subtitle2"><p>Подробное описание этого преимущества в идеальном соотношении - это текст в 2 строчки. Так выглядеть текст будет максимально элегантно.</p></div>
+                        <div class="overlay_image_title title2"><span style="font-size:22px">#2 –&nbsp;<span style="font-family:ubuntu">Полное юридическое сопровождение</span></span></div>
+                        <div class="overlay_image_subtitle subtitle2"><p>Мы берём на себя всю документальную и правовую работу, гарантируя абсолютную чистоту и безопасность сделки «под ключ».</p></div>
                     </div>
                 </div>
             </div>
             <div class="arr1">
                 <div class="col_2">
                     <div class="overlay_image_box">
-                        <div class="overlay_image_title title1"><span style="font-size:22px">#3 –&nbsp;<span style="font-family:ubuntu">Еще преимущества работы с Вами</span></span></div>
-                        <div class="overlay_image_subtitle subtitle1"><p>Подробное описание этого преимущества в идеальном соотношении - это текст в 2 строчки. Так выглядеть текст будет максимально элегантно.</p></div>
+                        <div class="overlay_image_title title1"><span style="font-size:22px">#3 –&nbsp;<span style="font-family:ubuntu">Персональный подход и забота</span></span></div>
+                        <div class="overlay_image_subtitle subtitle1"><p>Для нас ваша цель — не просто заявка, а жизненный план, поэтому мы подбираем решения, идеально соответствующие вашим потребностям и эмоциям.</p></div>
                     </div>
                 </div>
                 <div class="col_2 last">
                     <div class="overlay_image_box">
-                        <div class="overlay_image_title title2"><span style="font-size:22px">#4 –&nbsp;<span style="font-family:ubuntu">Еще одно преимущество работы с Вами</span></span></div>
-                        <div class="overlay_image_subtitle subtitle2"><p>Подробное описание этого преимущества в идеальном соотношении - это текст в 2 строчки. Так выглядеть текст будет максимально элегантно.</p></div>
+                        <div class="overlay_image_title title2"><span style="font-size:22px">#4 –&nbsp;<span style="font-family:ubuntu">Открытая и честная коммуникацияи</span></span></div>
+                        <div class="overlay_image_subtitle subtitle2"><p>Вы всегда в курсе каждого этапа процесса, потому что мы ведём дела прозрачно, без скрытых комиссий и неясных условий.</p></div>
                     </div>
                 </div>
             </div>
@@ -922,7 +925,13 @@
             </div>	<div class="sub_title dark" style="margin-bottom:2rem;font-weight:400">
                 <p><span style="font-size:22px"><span style="color:#dddddd">&nbsp;<strong>______________</strong></span></span></p>
                 <p><br></p>
-                <p><span style="font-size:30px;">Продолжение описания компании нужно вставить сюда тем же шрифтом<br>&nbsp;и тем же размером текста</span></p>
+                <p>
+                    <span style="font-size:30px;">
+                        <img style="display: inline-block; margin: 20px;" src="assets/img/cian.png">
+                        <img style="display: inline-block; margin: 20px;" src="assets/img/sber.png">
+                        <img style="display: inline-block; margin: 20px;" src="assets/img/kpk.png">
+                    </span>
+                </p>
             </div>	<div class="images">					<div class="image_box  arr1">				<div class="img1153" style="background-image:url(/img/0x150/logo_6.png)"></div>				<div class="overlay_image_box" data-link-target="" data-link="">				</div>			</div>					<div class="image_box  arr1">				<div class="img1153" style="background-image:url(/img/0x150/logo_7.png)"></div>				<div class="overlay_image_box" data-link-target="" data-link="">				</div>			</div>					<div class="image_box  arr1">				<div class="img1153" style="background-image:url(/img/0x150/logo_8.png)"></div>				<div class="overlay_image_box" data-link-target="" data-link="">				</div>			</div>					<div class="image_box  arr1">				<div class="img1153" style="background-image:url(/img/0x150/logo_9.png)"></div>				<div class="overlay_image_box" data-link-target="" data-link="">				</div>			</div>					<div class="image_box  arr1">				<div class="img1153" style="background-image:url(/img/0x150/logo_10.png)"></div>				<div class="overlay_image_box" data-link-target="" data-link="">				</div>			</div>			</div>
         </div>
     </div>
@@ -1013,14 +1022,14 @@
                 <div class="arr1 slide" style="display: block;">
                     <div class="col_1">
                         <div class="image1 img_radius" data-link="">
-                            <img src="/assets/img/review.jpg" width="220px" height="220px" loading="lazy">
+                            <img src="/assets/img/review1.jpg" width="220px" height="220px" loading="lazy">
                         </div>
                         <div class="overlay_image_box">
                             <div class="overlay_image_title title1">
-                                <p style="text-align:center"><span style="font-size:24px">Михаил Савинский</span></p>
+                                <p style="text-align:center"><span style="font-size:24px">Анна Колесникова</span></p>
                             </div>
                             <div class="overlay_image_subtitle subtitle1">
-                                <p style="text-align:center">Выражаю огромную благодарность агентству за креативный подход и качественную работу.&nbsp;Я сотрудничаю с ними уже не первый год и могу сказать, что очень доволен результатом нашего сотрудничества.&nbsp;</p>
+                                <p style="text-align:center">Обратилась в «Солнечный город» по рекомендации, и это было лучшее решение! Мне нужна была квартира в строящемся доме, но я очень боялась рисков. Мой агент Мария не просто подобрала несколько отличных вариантов, но и лично съездила на все объекты, проверила документы застройщика и подробно объяснила все нюансы договора. Сделку организовали быстро, а главное — я чувствовала себя в безопасности на всех этапах. Спасибо за мой светлый уголок и уверенность в завтрашнем дне!</p>
                             </div>
                         </div>
                     </div>
@@ -1028,11 +1037,11 @@
                 <div class="arr1 slide" style="display: none;">
                     <div class="col_1">
                         <div class="image1 img_radius" data-link="">
-                            <img src="/assets/img/review.jpg" width="220px" height="220px" loading="lazy">					</div>					<div class="overlay_image_box">						<div class="overlay_image_title title1">
-                                <p style="text-align:center"><span style="font-size:24px;">Александр Александров</span></p>
+                            <img src="/assets/img/review2.jpg" width="220px" height="220px" loading="lazy">					</div>					<div class="overlay_image_box">						<div class="overlay_image_title title1">
+                                <p style="text-align:center"><span style="font-size:24px;">Елена Волкова</span></p>
                             </div>
                             <div class="overlay_image_subtitle subtitle1">
-                                <p style="text-align:center">Компания доказала профессионализм каждого специалиста. Мы выражаем благодарность всей команде и руководителю агентства, в частности. Планируем обращаться в дальнейшем и рекомендовать нашим партнерам.</p>
+                                <p style="text-align:center">Нам нужно было совершить непростую сделку — продать загородный дом, чтобы переехать в большую квартиру в городе. Мы понимали, что это может затянуться на месяцы. Команда «Солнечного города» организовала всё как чёткий механизм: они профессионально оценили наш дом, нашли покупателей всего за три недели, а параллельно подобрали для нас идеальный вариант с видом на парк. Все хлопоты по документам и согласованиям взяли на себя. Переезд стал для нас не стрессом, а настоящим праздником, о котором мы мечтали!</p>
                             </div>
                         </div>
                     </div>
@@ -1075,39 +1084,7 @@
         </div>
     </div-->
 
-    <div class="section section119 bg_mode_color" style="background-color:#f3f3f3; padding-top:40px; padding-bottom:40px" data-id="1709052" id="b_1709052">
-        <a name="a_1698412"></a>
-        <div class="section_inner all_border all_border width1170">
-            <div class="logo">
-                <!--div class="logo_text"><span style="color:#696969"><span style="font-family:montserrat"><strong>YourLogo</strong></span></span></div-->
-                <div class="logo_img"><img src="/assets/img/logo_top.png" loading="lazy"></div>
-            </div>
-            <div class="address-and-ua">
-                <div class="address1">АН "Солнечный город", 123456, Краснодарский край, ст. Старонижестеблиевская ......<br>ИНН 1234567890 ОГРН 123456789012</div>
-                <div class="policy2">Политика конфиденциальности</div>
-            </div>
-            <div class="phone-and-address">
-                <div class="phones-wrapper" style="--phone-text-color:;--phone-font-size:20px;--phone-font-weight:500;">
-                    <div class="phone1 zphone show_phone_icon"><a href="tel:<?=$core->cfgRead('site_phone')?>"><?=$core->cfgRead('site_phone')?></a></div>
-                </div>
-                <div class="text1">Звонок по России бесплатный</div>
-
-                <div class="social_icons icon-circle">
-                    <a target="_blank" style="background:#fff;color:#000;" class="sn sn-whatsup  link_whatsup" href=""></a>
-                    <a target="_blank" style="background:#fff;color:#000;" class="sn sn-tg  link_tg" href=""></a>
-                </div>
-            </div>
-            <div class="policy2_popup">
-                <div class="policy2_title">Политика конфиденциальности</div>
-                <div class="policy2_body">
-                    <p>Данный сайт уважает Ваше право и соблюдает конфиденциальность при заполнении, передаче и хранении Ваших конфиденциальных сведений.<br>
-                        Размещение заявки на данном сайте означает Ваше согласие на обработку данных и дальнейшей передачи ваших контактных данных нашей компании.<br>
-                        Под персональными данными подразумевается информация, относящаяся к субъекту персональных данных, в частности имя, контактные реквизиты (адрес электронной почты) и иные данные, относимые Федеральным законом от 27 июля 2006 года № 152-ФЗ «О персональных данных» к категории персональных данных.<br>
-                        Целью обработки персональных данных является информирование об оказываемых услугах нашей компании.</p>
-                </div>
-            </div>
-        </div>
-    </div>
+    <?php include('tpl/site/bottom.tpl');?>
 
 </div>
 

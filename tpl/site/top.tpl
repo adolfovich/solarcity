@@ -16,7 +16,8 @@
             </div>
             <div class="menu1" style="font-size:16px;background-color:#fff;color:#333333;font-weight:300" >
                 <ul>
-                    <li class="level0 "><a href="#anchor1" title="ПОЧЕМУ МЫ">ПОЧЕМУ МЫ</a></li>
+                    <li class="level0 "><a href="/" title="ПОЧЕМУ МЫ">ГЛАВНАЯ</a></li>
+
                     <li class="level0 ">
                         <span style="padding: 7px;" onmouseover="showMenu('catalog')" onclick="showMenu('catalog'); return false;">КАТАЛОГ</span>
                         <div class="new_menu catalog" onmouseout="hideMenu('catalog')" style="display: none; position: absolute; background: #fff; z-index: 1; -webkit-box-shadow: 0px 8px 11px 6px rgba(34, 60, 80, 0.2);
@@ -29,7 +30,7 @@
                             </ul>
                         </div>
                     </li>
-                    <li class="level0 "><a href="#anchor4" title="КОНТАКТЫ">КОНТАКТЫ</a></li>
+                    <li class="level0 "><a href="/contacts" title="КОНТАКТЫ">КОНТАКТЫ</a></li>
                     <li class="level0 "><a href="/cab" title="КАБИНЕТ">КАБИНЕТ</a></li>
                 </ul>
             </div>
@@ -49,7 +50,6 @@
                         if (!$(e.relatedTarget).closest($("."+name)).length) {
                             // Код, который будет выполнен, если курсор ушел из области элемента
                             $("."+name).hide();
-                            console.log("Курсор ушел из элемента");
                         }
                     });
                     return false;
