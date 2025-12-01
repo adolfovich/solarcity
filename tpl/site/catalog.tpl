@@ -545,14 +545,18 @@
                 <div class="phones-wrapper" style="--phone-text-color:;--phone-font-size:20px;--phone-font-weight:500;">
                     <div class="phone1 zphone show_phone_icon"><a href="tel:<?=$core->cfgRead('site_phone')?>"><?=$core->cfgRead('site_phone')?></a></div>
                 </div>
-                <div style="color:#000;background-color:rgba(0,0,0,0)" class="menu_mobile_btn square new_burger">
-                    <svg><use xlink:href="/img/menu_burger.svg#menu"></use></svg>
+                <div style="color:#000;background-color:rgba(0,0,0,0); margin-top: 20px;" class="menu_mobile_btn square new_burger">
+                    <svg width="800px" height="800px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M20 7L4 7" stroke="#1C274C" stroke-width="1.5" stroke-linecap="round"/>
+                        <path d="M20 12L4 12" stroke="#1C274C" stroke-width="1.5" stroke-linecap="round"/>
+                        <path d="M20 17L4 17" stroke="#1C274C" stroke-width="1.5" stroke-linecap="round"/>
+                    </svg>
                 </div>
-                <div class="menu1" style="font-size:16px;background-color:#fff;color:#333333;font-weight:300">
+                <div class="menu1" style="font-size:16px;background-color:#fff;color:#333333;font-weight:300" >
                     <ul>
-                        <li class="level0 "><a href="/" title="ПОЧЕМУ МЫ">ГЛАВНАЯ</a></li>
+                        <li class="level0 "><a href="#anchor1" title="ПОЧЕМУ МЫ">ПОЧЕМУ МЫ</a></li>
                         <li class="level0 ">
-                            <a href="#anchor3" title="КАТАЛОГ" onmouseover="showMenu('catalog')">КАТАЛОГ</a>
+                            <span style="padding: 7px;" onmouseover="showMenu('catalog')" onclick="showMenu('catalog'); return false;">КАТАЛОГ</span>
                             <div class="new_menu catalog" onmouseout="hideMenu('catalog')" style="display: none; position: absolute; background: #fff; z-index: 1; -webkit-box-shadow: 0px 8px 11px 6px rgba(34, 60, 80, 0.2);
 -moz-box-shadow: 0px 8px 11px 6px rgba(34, 60, 80, 0.2); box-shadow: 0px 8px 11px 6px rgba(34, 60, 80, 0.2); margin-top: 10px; margin-left: 30px;">
                                 <ul style="padding: 20px;">
@@ -562,27 +566,34 @@
                                     <?php } ?>
                                 </ul>
                             </div>
-                            <script>
-                                function showMenu(name){
-                                    $("."+name).show();
-                                }
-                                function hideMenu(name) {
-                                    $("."+name).on("mouseout", function(e) {
-                                        // Проверяем, находится ли курсор вне родительского элемента и его дочерних элементов
-                                        if (!$(e.relatedTarget).closest($("."+name)).length) {
-                                            // Код, который будет выполнен, если курсор ушел из области элемента
-                                            $("."+name).hide();
-                                            console.log("Курсор ушел из элемента");
-                                        }
-                                    });
-
-                                }
-                            </script>
                         </li>
                         <li class="level0 "><a href="#anchor4" title="КОНТАКТЫ">КОНТАКТЫ</a></li>
                         <li class="level0 "><a href="/cab" title="КАБИНЕТ">КАБИНЕТ</a></li>
                     </ul>
                 </div>
+                <script>
+                    function showMenu(name){
+                        $("."+name).show();
+                        return false;
+                    }
+                    function hideMenuClick(name){
+                        $("."+name).hide();
+                        console.log("click");
+                        return false;
+                    }
+                    function hideMenu(name) {
+                        $("."+name).on("mouseout", function(e) {
+                            // Проверяем, находится ли курсор вне родительского элемента и его дочерних элементов
+                            if (!$(e.relatedTarget).closest($("."+name)).length) {
+                                // Код, который будет выполнен, если курсор ушел из области элемента
+                                $("."+name).hide();
+                                console.log("Курсор ушел из элемента");
+                            }
+                        });
+                        return false;
+
+                    }
+                </script>
             </div>
         </div>
     </div>
