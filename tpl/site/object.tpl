@@ -13,6 +13,15 @@
     <script type="text/javascript" src="/assets/js/jquery.min.js"></script>
     <script type="text/javascript" src="/assets/js/tools/astc.min.js?ver=1756884037"></script>
 
+    <link rel="stylesheet" type="text/css" href="/assets/ad-galery/jquery.ad-gallery.css" />
+    <!--script type="text/javascript" src="ad-gallery/jquery-1.8.3.min.js"></script-->
+    <script type="text/javascript" src="/assets/ad-galery/jquery.ad-gallery.js"></script>
+    <script type="text/javascript">
+        $(function() {
+            var galleries = $('.ad-gallery').adGallery();
+        });
+    </script>
+
 
     <script>
         $(function(){
@@ -590,92 +599,66 @@
 
     <div class="section section250	clip_none bg_text mode_3 bg_mode_color" style="background-color:#f5f5f5; --section-image-radius:0; padding-top:80px; padding-bottom:80px;" data-id="1709042" id="b_1709042">
         <a name="anchor1"></a><div class="noise" style="background-image:url(/img/natural-paper.png)"></div>
-        <div class="section_inner all_border width1170 middle center">
-            <div class="arr1">
-                <form method="post" style="display: contents;">
-                    <div data-hcolor="#475a64" style="width: 100%; color:#f9c000;  border-radius: 0em;   box-shadow: 0;  font-size: 18px;    ">
-                        <input name="search" type="text" class="btn1" style="width: 100%; max-width: 100%; color: black; text-align: left; border-color: #f9c000;" />
-                    </div>
-                    <button type="submit" class="btn2 surround" data-hcolor="#475a64" style="background-color:#f9c000;  border-radius: 0em;   box-shadow: 0;  font-size: 20px;   ">НАЙТИ</button>
-                </form>
-            </div>
-        </div>
+
         <div class="section_inner all_border width1170">
-            <div class="title" style="margin-bottom:1rem;font-weight:500">
-
-            </div>
-            <?php if (!$objects_chunks) { ?>
-                <div class="section section250	clip_none bg_text mode_3 bg_mode_color" style="background-color:#f5f5f5; --section-image-radius:0; padding-top:80px; padding-bottom:80px;" data-id="1709042" id="b_1709042">
-                    <a name="anchor1"></a><div class="noise" style="background-image:url(/img/natural-paper.png)"></div>
-                    <div class="section_inner all_border width1170">
-                        <div class="title" style="margin-bottom:1rem;font-weight:500">
-                            <p><span style="font-size:48px"><strong>Не найдено</strong></span></p>
-                            <p><span style="color:#696969"><span style="font-size:17px"><strong>Попробуйте изменить параметры поиска</strong></span></span></p>
-
+            <div class="arr1">
+                <div data-link="" class="image1  top_left size_700x500" style="margin-right: 20px;">
+                    <!--<img src="<?=$object_master_photo['path']?>" width="700px" height="500px" loading="lazy"> -->
+                    <div id="ad-gallery" class="ad-gallery">
+                        <div class="ad-image-wrapper"> </div>
+                        <div class="ad-controls"> </div>
+                        <div class="ad-nav">
+                            <div class="ad-thumbs">
+                                <ul class="ad-thumb-list" >
+                                    <li> <a href="<?=$object_master_photo['path']?>"> <img src="<?=$object_master_photo['path']?>" width="160" height="107"/> </a> </li>
+                                    <?php foreach($object_photos as $object_photo) {?>
+                                        <li> <a href="<?=$object_photo['path']?>"> <img src="<?=$object_photo['path']?>" width="160" height="107"/> </a> </li>
+                                    <?php } ?>
+                                </ul>
+                            </div>
                         </div>
                     </div>
                 </div>
-            <?php } else { ?>
+                <div class="right top_left size_700x500">
+                    <div class="bg_right" style="opacity:1;background:#F2F2F2"></div>
+                    <div class="title1" style="margin-bottom:1rem;font-weight:500">
+                        <strong><span style="font-size:26px"><span style="color:#000000"><span style="font-family:montserrat"><?=$object_data['name']?></span></span></span></strong>
+                    </div>
+                    <div class="txt1">
+                        <p><?=$object_data['description']?></p>
+                    </div>
+                    <br>
+                    <div class="txt1" >
+                        <p><span style="font-weight: 700;">Адрес: </span><?=$object_data['address_approx']?></p>
+                    </div>
+                    <br>
+                    <?php if ($object_data['is_room']) { ?>
+                    <div class="txt1" >
+                        <p><span style="font-weight: 700;">Площадь: </span><?=$object_data['area_premises']?>м2</p>
+                    </div>
+                    <?php } ?>
+                    <br>
+                    <?php if ($object_data['is_plot']) { ?>
+                        <div class="txt1" >
+                            <p><span style="font-weight: 700;">Площадь участка: </span><?=$object_data['area_plot']?>сот.</p>
+                        </div>
+                    <?php } ?>
+                    <br>
+                    <div class="title1">
+                        <p><span style="font-weight: 700;">Стоимость: </span><?=number_format($object_data['price'], 0, ',', ' ');?> ₽</p>
+                    </div>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <div class="btn1 surround" data-hcolor="#475a64" style="background-color:#f9c000;  border-radius: 0em;   box-shadow: 0;  font-size: 18px;   ">ОСТАВИТЬ ЗАЯВКУ</div>
 
 
-            <?php foreach ($objects_chunks as $chunk) {?>
-                <div class="arr1">
-               <?php  foreach ($chunk as $object) {?>
-
-
-                <div class="col_2">
-                    <a href="object?id=<?=$object['id']?>" style="text-decoration: none">
-                    <table>
-                        <tbody>
-                            <tr>
-                                <td style="width: 40%;">
-                                    <img src="/img/sample.jpg">
-                                </td>
-                                <td style="vertical-align: top; padding-left: 10px;">
-                                        <div style="font-size:22px; font-family:ubuntu"># <?=$object['name']?></div>
-                                        <div style="font-family:ubuntu; text-align: justify;"><?=mb_substr($object['description'], 0, 100)?>...</div>
-                                        <div style="font-size:22px; font-family:ubuntu; text-align: right;"><?=number_format($object['price'], 0, '', ' ')?> ₽</div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td colspan="2">
-                                    <a class="btn2 surround" data-hcolor="#475a64" style="max-width: 100%; background-color:#f9c000; border-radius: 0em; box-shadow: 0; font-size: 20px;">Подробнее</a>
-                                </td>
-                            </tr>
-
-                        </tbody>
-                    </table>
-                    </a>
                 </div>
-
-            <?php } ?>
-                </div>
-            <?php } ?>
-            <?php } ?>
-
-
-
-            <div class="clear"></div>
-        </div>
-    </div>
-
-
-
-    <div class="	section section1250	clip_none 					bg_mode_color" style="	background-color:#ffffff;	padding-top:40px;	padding-bottom:120px;	" data-id="1709046" id="b_1709046">
-        <a name="a_1698142"></a>
-        <div class="section_inner all_border width1170 middle center">
-            <div class="arr1">
-                <div class="btn1    " data-hcolor="#475a64" style="color:#f9c000;  border-radius: 0em;   box-shadow: 0;  font-size: 18px;    ">Бесплатная консультация</div>
-                <div class="btn2 surround" data-hcolor="#475a64" style="background-color:#f9c000;  border-radius: 0em;   box-shadow: 0;  font-size: 20px;   ">Заказать услуги</div>
             </div>
+
         </div>
     </div>
-
-
-
-
-
-
 
     <div class="section section119 bg_mode_color" style="background-color:#f3f3f3; padding-top:40px; padding-bottom:40px" data-id="1709052" id="b_1709052">
         <a name="a_1698412"></a>
