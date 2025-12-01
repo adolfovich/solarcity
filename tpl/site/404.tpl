@@ -154,7 +154,7 @@
             <h2>Агенство недвижимости</h2>
             <h1>"Солнечный город"</h1><br>
         </div>
-        <button class="home-button" onclick="window.location.href='https://solarcity23.ru/'">
+        <button class="home-button" onclick="window.location.href='./'">
             Вернуться на главную страницу
         </button>
     </div>   
