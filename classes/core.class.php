@@ -396,6 +396,10 @@ class Core
   public function getObjectMasterPhoto($object_id)
   {
       global $db;
-      return $db->getOne("SELECT path FROM objects_photo WHERE object_id = ?i AND is_master = 1", $object_id);
+      $photo = $db->getOne("SELECT path FROM objects_photo WHERE object_id = ?i AND is_master = 1", $object_id);
+      if (!$photo) {
+          $photo = '/assets/img/nophoto.png';
+      }
+      return $photo;
   }
 }

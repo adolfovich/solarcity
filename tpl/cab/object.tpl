@@ -131,7 +131,7 @@
                                     <div class="form-group">
                                         <label for="photos">Фото объекта</label>
                                         <div class="row">
-                                            <?php if($objects_photo) {
+                                            <?php if(isset($objects_photo)) {
                                                 foreach($objects_photo as $object_photo) {?>
                                                     <div class="col">
                                                         <img src="<?=$object_photo['path']?>" style="width: 100%; aspect-ratio: 4 / 3;"><br>

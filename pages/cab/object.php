@@ -37,7 +37,7 @@ if (isset($_POST['name'])) {
         $msg['text'] = 'Площадь помещения не указана';
     } else {
 
-        if (isset($_POST['new'])) {
+        if (isset($_GET['action']) && $_GET['action'] == 'new') {
             $db->query("INSERT INTO objects SET ?u", $object);
             $object_id = $db->insertId();
         } else {
@@ -45,7 +45,7 @@ if (isset($_POST['name'])) {
             $object_id = $_GET['id'];
         }
 
-        //$core->jsredir('object?id='.$object_id);
+        $core->jsredir('object?id='.$object_id);
     }
 }
 
@@ -145,7 +145,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_FILES['photos'])) {
         }
 
     } else {
-        $core->jsredir('objects');
+        //$core->jsredir('objects');
     }
 
 include ('tpl/cab/object.tpl');
