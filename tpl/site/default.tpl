@@ -59,7 +59,7 @@
     <!-- Tobiz modules styles -->
 
 
-    <script type="text/javascript" src="/assets/js/script.min.js"></script><script type="text/javascript" src="/assets/js/auth.js"></script>		<script type="text/javascript">tobiz.blocks = [];</script>
+    <script type="text/javascript" src="/assets/js/script.min.js"></script>		<script type="text/javascript">tobiz.blocks = [];</script>
 
 
 
