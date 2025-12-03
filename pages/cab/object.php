@@ -20,58 +20,66 @@ if (isset($_POST['name'])) {
     if (strlen($_POST['name']) < 3) {
         $msg['type'] = 'danger';
         $msg['text'] = 'Название слишком короткое';
+        $error = true;
     } else if ($_POST['address'] == '') {
         $msg['type'] = 'danger';
         $msg['text'] = 'Точный адрес не указан';
+        $error = true;
     } else if ($_POST['address_approx'] == '') {
         $msg['type'] = 'danger';
         $msg['text'] = 'Приблизительный адрес не указан';
+        $error = true;
     } else if ($_POST['description'] == '') {
         $msg['type'] = 'danger';
         $msg['text'] = 'Описание не указано';
+        $error = true;
     } else if ($_POST['price'] == '') {
         $msg['type'] = 'danger';
         $msg['text'] = 'Цена не указана';
+        $error = true;
     } else if ($_POST['area_premises'] == '') {
         $msg['type'] = 'danger';
         $msg['text'] = 'Площадь помещения не указана';
+        $error = true;
     } else {
-
+        $error = false;
         if (isset($_GET['action']) && $_GET['action'] == 'new') {
             $db->query("INSERT INTO objects SET ?u", $object);
             $object_id = $db->insertId();
+            $saved = 1;
+
         } else {
-            $db->query("UPDATE objects SET ?u", $object);
+            $db->query("UPDATE objects SET ?u WHERE id = ?i", $object, $_GET['id']);
             $object_id = $_GET['id'];
         }
 
-        $core->jsredir('object?id='.$object_id);
+
     }
 }
 
 if (isset($_GET['action']) && $_GET['action'] == 'new') {
 
-        $title = 'Добавление объекта';
-        if (!isset($object['name'])) {
-            $object['id'] = '';
-            $object['name'] = '';
-            $object['type'] = '';
-            $object['category'] = '';
-            $object['address'] = '';
-            $object['address_approx'] = '';
-            $object['description'] = '';
-            $object['price'] = '';
-            $object['area_premises'] = '';
-            $object['area_plot'] = '';
-            $object['comment'] = '';
-        }
+    $title = 'Добавление объекта';
+    if (!isset($object['name'])) {
+        $object['id'] = '';
+        $object['name'] = '';
+        $object['type'] = '';
+        $object['category'] = '';
+        $object['address'] = '';
+        $object['address_approx'] = '';
+        $object['description'] = '';
+        $object['price'] = '';
+        $object['area_premises'] = '';
+        $object['area_plot'] = '';
+        $object['comment'] = '';
+    }
 
 
 } else if (isset($_GET['action']) && $_GET['action'] == 'delete') {
 
-        echo 'delete';
-        $db->query("UPDATE objects SET is_del = 1 WHERE id = ?i", $_GET['id']);
-        $core->jsredir('objects');
+    echo 'delete';
+    $db->query("UPDATE objects SET is_del = 1 WHERE id = ?i", $_GET['id']);
+    $core->jsredir('objects');
 
 } else if (isset($_GET['action']) && $_GET['action'] == 'set_def_photo' && $_GET['photo'] != '') {
 
@@ -84,9 +92,11 @@ if (isset($_GET['action']) && $_GET['action'] == 'new') {
 
 }
 
-if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_FILES['photos'])) {
+
+
+if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_FILES['photos']) && $error == false) {
     $uploadDir = 'img/photo/';
-    $maxSize = 3 * 1024 * 1024;
+    $maxSize = 7 * 1024 * 1024;
 
     foreach ($_FILES['photos']['tmp_name'] as $key => $tmpName) {
 
@@ -115,7 +125,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_FILES['photos'])) {
 
             if (move_uploaded_file($tmpName, $uploadPath)) {
 
-                $master_photo = $db->getOne("SELECT is_master FROM objects_photo WHERE object_id = ?i", $_GET['id']);
+                $master_photo = $db->getOne("SELECT is_master FROM objects_photo WHERE object_id = ?i", $object_id);
 
                 if ($master_photo) {
                     $is_master = 0;
@@ -123,7 +133,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_FILES['photos'])) {
                     $is_master = 1;
                 }
 
-                $db->query("INSERT INTO objects_photo SET object_id = ?i, path = ?s, is_master = ?i", $_GET['id'], '/'.$uploadPath, $is_master);
+                $db->query("INSERT INTO objects_photo SET object_id = ?i, path = ?s, is_master = ?i", $object_id, '/'.$uploadPath, $is_master);
             }
 
 
@@ -131,21 +141,27 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_FILES['photos'])) {
     }
 }
 
-    if (isset($_GET['id'])) {
+if (isset($_GET['action']) && $_GET['action'] == 'new' && isset($saved)) {
 
-        if ($object = $db->getRow("SELECT * FROM objects WHERE id = ?i", $_GET['id'])) {
+    $core->jsredir('object?id='.$object_id);
 
-            $objects_photo = $db->getAll("SELECT * FROM objects_photo WHERE object_id = ?i AND is_del = 0", $_GET['id']);
+}
 
-            $title = 'Редактирование объекта:<br>'.$object['name'];
+if (isset($_GET['id'])) {
 
-        } else {
-            $msg['type'] = "danger";
-            $msg['text'] = "Объект не найден";
-        }
+    if ($object = $db->getRow("SELECT * FROM objects WHERE id = ?i", $_GET['id'])) {
+
+        $objects_photo = $db->getAll("SELECT * FROM objects_photo WHERE object_id = ?i AND is_del = 0", $_GET['id']);
+
+        $title = 'Редактирование объекта:<br>'.$object['name'];
 
     } else {
-        //$core->jsredir('objects');
+        $msg['type'] = "danger";
+        $msg['text'] = "Объект не найден";
     }
+
+} else {
+    //$core->jsredir('objects');
+}
 
 include ('tpl/cab/object.tpl');
