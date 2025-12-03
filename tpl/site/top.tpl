@@ -7,6 +7,29 @@
             <div class="phones-wrapper" style="--phone-text-color:;--phone-font-size:20px;--phone-font-weight:500;">
                 <div class="phone1 zphone show_phone_icon"><a href="tel:<?=$core->cfgRead('site_phone')?>"><?=$core->cfgRead('site_phone')?></a></div>
             </div>
+            <style>@media (max-width:960px){
+                   .menu_mobile_btn{
+                   display:block!important;
+                   position:relative;
+                   right:auto;
+                   top:auto;
+                   transform:none
+                   }
+                }
+                   @media (max-width:640px){
+                   .section105 .menu_mobile_btn{
+                   top:50%;
+                   transform:translateY(-50%)
+                   }
+                }
+                    @media (max-width:400px){
+                    .section105 .menu_mobile_btn.active{
+                    left:unset;
+                    right:20px;
+                    z-index:106
+                    }
+                }
+                </style>
             <div style="color:#000;background-color:rgba(0,0,0,0); margin-top: 20px;" class="menu_mobile_btn square new_burger">
                 <svg width="800px" height="800px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M20 7L4 7" stroke="#1C274C" stroke-width="1.5" stroke-linecap="round"/>
