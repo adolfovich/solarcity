@@ -402,4 +402,17 @@ class Core
       }
       return $photo;
   }
+
+  public function modifyObgectNum($id)
+  {
+        if ($id < 10) {
+            $newId = '000' . $id;
+        } else if ($id < 100) {
+            $newId = '00' . $id;
+        } else {
+            $newId = $id;
+        }
+
+        return $newId;
+  }
 }

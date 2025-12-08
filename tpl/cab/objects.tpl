@@ -67,7 +67,8 @@
                                     ?>
                                             <a href="object?id=<?=$object['id']?>">
                                                 <div class="row object-row">
-                                                    <div class="col-2"><img style="width: 100px; height: 100px" src="<?=$core->getObjectMasterPhoto($object['id'])?>"></div>
+                                                    <div class="col-1"><?=$core->modifyObgectNum($object['id'])?></div>
+                                                    <div class="col-1"><img style="width: 100px; height: 100px" src="<?=$core->getObjectMasterPhoto($object['id'])?>"></div>
                                                     <div class="col-3">
                                                         <b><?=$object['name']?></b>
                                                         <br>

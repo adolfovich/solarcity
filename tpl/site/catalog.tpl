@@ -583,7 +583,7 @@
                                     <img class="masterphoto" style="aspect-ratio: 1 / 1;" src="<?=$core->getObjectMasterPhoto($object['id'])?>">
                                 </td>
                                 <td style="vertical-align: top; padding-left: 10px;">
-                                        <div style="font-size:22px; font-family:ubuntu"># <?=$object['name']?></div>
+                                        <div style="font-size:22px; font-family:ubuntu"><?=$core->modifyObgectNum($object['id'])?># <?=$object['name']?></div>
                                         <div style="font-family:ubuntu; text-align: justify;"><?=mb_substr($object['description'], 0, 100)?>...</div>
                                         <div style="font-size:22px; font-family:ubuntu; text-align: right;"><?=number_format($object['price'], 0, '', ' ')?> ₽</div>
                                 </td>
