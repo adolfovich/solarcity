@@ -580,7 +580,7 @@
                         <tbody>
                             <tr>
                                 <td style="width: 40%;">
-                                    <img src="/img/sample.jpg">
+                                    <img class="masterphoto" style="aspect-ratio: 1 / 1;" src="<?=$core->getObjectMasterPhoto($object['id'])?>">
                                 </td>
                                 <td style="vertical-align: top; padding-left: 10px;">
                                         <div style="font-size:22px; font-family:ubuntu"># <?=$object['name']?></div>
