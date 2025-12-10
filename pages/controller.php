@@ -36,6 +36,8 @@ if ($url[0] == '' || ($url[0] != 'cab' && $url[0] != 'login')) {
     include ('pages/cab/login.php');
 } else if ($url[0] == 'cab') {
   include ('pages/cab/template.php');
+} else if ($url[0] == 'cian') {
+  include ('pages/site/cian.php');
 }  else {
   include ('pages/site/default.php');
 }
