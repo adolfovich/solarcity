@@ -163,7 +163,7 @@ foreach ($objects as $obj) {
     addBool($dom, $object, 'HasFurniture', true);
     addBool($dom, $object, 'HasInternet', true);
     $object->appendChild($dom->createElement('RepairType', 'euro'));
-    /*
+    */
     $feed->appendChild($object);
 }
 
