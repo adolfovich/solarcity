@@ -159,11 +159,12 @@ foreach ($objects as $obj) {
     }
     $object->appendChild($photos);
     
+    /*
     // Стандартные опции (демо)
     addBool($dom, $object, 'HasFurniture', true);
     addBool($dom, $object, 'HasInternet', true);
     $object->appendChild($dom->createElement('RepairType', 'euro'));
-    
+    */
     $feed->appendChild($object);
 }
 
