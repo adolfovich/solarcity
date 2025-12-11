@@ -53,10 +53,3 @@ INSERT INTO `cian_categories` (`id`, `name`, `cian_code`, `category`, `object_ty
 (6, 'Участок (продажа)', 'land', 1, 3, 6),
 (7, 'Гараж (продажа)', 'garage', 1, 0, 7),
 (8, 'Коммерческая недвижимость', 'commerce', 0, 4, 8);
-
---
--- Добавление столбца категорий Циан `cian_category`
---
-
-ALTER TABLE `objects` ADD COLUMN `cian_category` int DEFAULT NULL AFTER `category`;
-
