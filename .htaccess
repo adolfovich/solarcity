@@ -1,7 +1,9 @@
 RewriteEngine On
+RewriteBase /
+
+# Все запросы, кроме прямых запросов к файлам с расширениями,
+# перенаправляем на index.php
+RewriteCond %{REQUEST_URI} !\.(css|js|png|jpg|jpeg|gif|ico|svg|woff|woff2|ttf|eot|pdf|zip|mp4|mp3)$
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
-
-RewriteCond %{REQUEST_URI} !\.(gif|jpe?g|png|css|js)$
-
-RewriteRule ^(.+)$ /index.php/$1 [L,QSA]
+RewriteRule ^ index.php [L,QSA]

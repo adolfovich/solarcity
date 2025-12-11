@@ -1,4 +1,5 @@
 _conf.php
 .idea
-/temp/*
 .htaccess
+/temp/*
+/img/photo/*

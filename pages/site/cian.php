@@ -6,23 +6,24 @@ ini_set('display_errors', 0);
 header('Content-Type: application/xml; charset=utf-8');
 
 // Блок безопасности: только XML-запросы, без GET/POST параметров
-if (!empty($_GET) || !empty($_POST) || !empty($_COOKIE)) {
-    http_response_code(403);
-    header('Content-Type: text/plain; charset=utf-8');
-    die('Access Denied');
-}
+//if (!empty($_GET) || !empty($_POST) || !empty($_COOKIE)) {
+    //http_response_code(403);
+    ////header('Content-Type: text/plain; charset=utf-8');
+    //die('Access Denied');
+    //echo '';
+//}
 
 // Защита от горячих ссылок (только User-Agent ботов ЦИАН/Google/etc)
-$userAgents = [
-    'CianBot', 'Googlebot', 'bingbot', 'YandexBot', 'MJ12bot'
-];
-$ua = $_SERVER['HTTP_USER_AGENT'] ?? '';
-if (!in_array(true, array_map(function($agent) use ($ua) { 
-    return stripos($ua, $agent) !== false; 
-}, $userAgents)) && empty($_SERVER['HTTP_USER_AGENT'])) {
-    http_response_code(403);
-    die('Access Denied');
-}
+//$userAgents = [
+//    'CianBot', 'Googlebot', 'bingbot', 'YandexBot', 'MJ12bot'
+//];
+//$ua = $_SERVER['HTTP_USER_AGENT'] ?? '';
+//if (!in_array(true, array_map(function($agent) use ($ua) { 
+//    return stripos($ua, $agent) !== false; 
+//}, $userAgents)) && empty($_SERVER['HTTP_USER_AGENT'])) {
+//    http_response_code(403);
+//    die('Access Denied');
+//}
 
 // Загружаем объекты вместе с кодом категории Циан (учитываем явный выбор и авто-подбор по типу)
 $objects = $db->getAll("
@@ -158,12 +159,11 @@ foreach ($objects as $obj) {
     }
     $object->appendChild($photos);
     
-    /*
     // Стандартные опции (демо)
     addBool($dom, $object, 'HasFurniture', true);
     addBool($dom, $object, 'HasInternet', true);
     $object->appendChild($dom->createElement('RepairType', 'euro'));
-    */
+    
     $feed->appendChild($object);
 }
 
