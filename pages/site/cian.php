@@ -170,6 +170,16 @@ foreach ($objects as $obj) {
     $bargain->appendChild($dom->createElement('Currency', 'rur'));
     $object->appendChild($bargain);
 
+    // Land — обязательный тег для houseSale с площадью участка
+    $categoryCode = mapCategory($obj);
+    $areaPlot = (float)($obj['area_plot'] ?? 0);
+    if ($categoryCode === 'houseSale' && $areaPlot > 0) {
+        $land = $dom->createElement('Land');
+        $land->appendChild($dom->createElement('Area', number_format($areaPlot, 2, '.', '')));
+        $land->appendChild($dom->createElement('AreaUnitType', 'sotka'));
+        $object->appendChild($land);
+    }
+
     // Phones — по регламенту ЦИАН: номер только из БД, строго 10 цифр локального номера
     if (!empty($phoneNumber)) {
         $phonesEl = $dom->createElement('Phones');
