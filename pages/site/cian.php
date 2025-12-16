@@ -4,27 +4,26 @@ error_reporting(0);
 ini_set('display_errors', 0);
 
 header('Content-Type: application/xml; charset=utf-8');
-
+/*
 // Блок безопасности: только XML-запросы, без GET/POST параметров
-//if (!empty($_GET) || !empty($_POST) || !empty($_COOKIE)) {
-    //http_response_code(403);
-    ////header('Content-Type: text/plain; charset=utf-8');
-    //die('Access Denied');
-    //echo '';
-//}
+if (!empty($_GET) || !empty($_POST) || !empty($_COOKIE)) {
+    http_response_code(403);
+    header('Content-Type: text/plain; charset=utf-8');
+    die('Access Denied');
+}
 
 // Защита от горячих ссылок (только User-Agent ботов ЦИАН/Google/etc)
-//$userAgents = [
-//    'CianBot', 'Googlebot', 'bingbot', 'YandexBot', 'MJ12bot'
-//];
-//$ua = $_SERVER['HTTP_USER_AGENT'] ?? '';
-//if (!in_array(true, array_map(function($agent) use ($ua) { 
-//    return stripos($ua, $agent) !== false; 
-//}, $userAgents)) && empty($_SERVER['HTTP_USER_AGENT'])) {
-//    http_response_code(403);
-//    die('Access Denied');
-//}
-
+$userAgents = [
+    'CianBot', 'Googlebot', 'bingbot', 'YandexBot', 'MJ12bot'
+];
+$ua = $_SERVER['HTTP_USER_AGENT'] ?? '';
+if (!in_array(true, array_map(function($agent) use ($ua) { 
+    return stripos($ua, $agent) !== false; 
+}, $userAgents)) && empty($_SERVER['HTTP_USER_AGENT'])) {
+    http_response_code(403);
+    die('Access Denied');
+}
+*/
 // Загружаем объекты вместе с кодом категории Циан (учитываем явный выбор и авто-подбор по типу)
 $objects = $db->getAll("
     SELECT 
@@ -38,6 +37,14 @@ $objects = $db->getAll("
     WHERE o.is_del = 0
     ORDER BY o.id DESC
 ");
+
+// Телефон для тега Phones берём напрямую из таблицы settings (поле site_phone -> data)
+// Структура: id, description, name, data
+$sitePhoneRaw = $db->getOne("SELECT `data` FROM `settings` WHERE `name` = ?s", 'site_phone');
+// Если записи нет или значение пустое, $sitePhoneRaw будет NULL или пустой строкой
+if (empty($sitePhoneRaw)) {
+    $sitePhoneRaw = '';
+}
 
 // ✅ ПРОВЕРЯЕМ $objects
 if (empty($objects)) {
@@ -104,6 +111,29 @@ $feed = $dom->createElement('Feed');
 $dom->appendChild($feed);
 $feed->appendChild($dom->createElement('Feed_Version', '2'));
 
+// Подготавливаем телефон для всех объектов: только из БД и по требованиям ЦИАН
+// 1) оставляем только цифры
+// 2) если номер начинается с 8, заменяем на 7 (российский формат)
+// 3) берём последние 10 цифр как локальный номер (без кода страны)
+$phoneDigits = preg_replace('/\D+/', '', trim((string)$sitePhoneRaw));
+$phoneNumber = '';
+if (!empty($phoneDigits)) {
+    // Если номер начинается с 8, заменяем первую цифру на 7
+    if (substr($phoneDigits, 0, 1) === '8') {
+        $phoneDigits = '7' . substr($phoneDigits, 1);
+    }
+    // Если номер начинается с 7 и имеет 11 цифр, берём последние 10 (убираем код страны)
+    if (strlen($phoneDigits) >= 11 && substr($phoneDigits, 0, 1) === '7') {
+        $phoneNumber = substr($phoneDigits, 1, 10); // Берём 10 цифр после кода страны
+    } elseif (strlen($phoneDigits) >= 10) {
+        // Если 10 или больше цифр, берём последние 10
+        $phoneNumber = substr($phoneDigits, -10);
+    } elseif (strlen($phoneDigits) > 0) {
+        // Если меньше 10, используем все (не идеально, но лучше чем ничего)
+        $phoneNumber = $phoneDigits;
+    }
+}
+
 foreach ($objects as $obj) {
     $object = $dom->createElement('Object');
     
@@ -139,6 +169,16 @@ foreach ($objects as $obj) {
     $bargain->appendChild($dom->createElement('Price', $price));
     $bargain->appendChild($dom->createElement('Currency', 'rur'));
     $object->appendChild($bargain);
+
+    // Phones — по регламенту ЦИАН: номер только из БД, строго 10 цифр локального номера
+    if (!empty($phoneNumber)) {
+        $phonesEl = $dom->createElement('Phones');
+        $phoneSchema = $dom->createElement('PhoneSchema');
+        $phoneSchema->appendChild($dom->createElement('CountryCode', '7'));
+        $phoneSchema->appendChild($dom->createElement('Number', $phoneNumber));
+        $phonesEl->appendChild($phoneSchema);
+        $object->appendChild($phonesEl);
+    }
     
 // Фото
     $photos = $dom->createElement('Photos');
