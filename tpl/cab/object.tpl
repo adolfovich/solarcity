@@ -135,12 +135,25 @@
                                                 foreach($objects_photo as $object_photo) {?>
                                                     <div class="col">
                                                         <img src="<?=$object_photo['path']?>" style="width: 100%; aspect-ratio: 4 / 3;"><br>
+                                                        <div class="row">
                                                         <?php if ($object_photo['is_master']) { ?>
-                                                            <a class="btn btn-success" style="width: 100%; color: #fff; border-radius: 0px;">Главное</a>
+                                                            <div class="col">
+                                                                <a class="btn btn-success" style="width: 100%; color: #fff; border-radius: 0px;">Главное</a>
+                                                            </div>
                                                         <?php } else {?>
-                                                            <a class="btn btn-dark" href="?id=<?=$object['id']?>&action=set_def_photo&photo=<?=$object_photo['id']?>" style="width: 100%; color: #fff; border-radius: 0px;">Сделать главным</a>
+                                                            <div class="col">
+                                                                <a class="btn btn-dark" href="?id=<?=$object['id']?>&action=set_def_photo&photo=<?=$object_photo['id']?>" style="width: 100%; color: #fff; border-radius: 0px;">Сделать главным</a>
+                                                            </div>
                                                         <?php } ?>
-                                                        <a class="btn btn-danger"  href="?id=<?=$object['id']?>&action=del_photo&photo=<?=$object_photo['id']?>" style="width: 100%; color: #fff; border-top-left-radius: 0px;border-top-right-radius: 0px;"><i class="fa fa-trash" aria-hidden="true"></i></a>
+                                                            <div class="col">
+                                                                <a class="btn btn-success"  target="_blank" href="<?=$object_photo['path']?>" style="width: 100%; color: #fff; border-radius: 0px;">Открыть</a>
+                                                            </div>
+                                                        </div>
+                                                        <div class="row">
+                                                            <div class="col">
+                                                                <a class="btn btn-danger"  href="?id=<?=$object['id']?>&action=del_photo&photo=<?=$object_photo['id']?>" style="width: 100%; color: #fff; border-top-left-radius: 0px;border-top-right-radius: 0px;"><i class="fa fa-trash" aria-hidden="true"></i></a>
+                                                            </div>
+                                                        </div>
                                                     </div>
                                                 <?php }
                                             }?>
