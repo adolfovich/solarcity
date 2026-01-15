@@ -16,6 +16,16 @@ if (isset($_POST['name'])) {
     $object['area_premises'] = $_POST['area_premises'];
     $object['area_plot'] = $_POST['area_plot'];
     $object['comment'] = $_POST['comment'];
+    if (isset($_POST['publishCian']) && $_POST['publishCian'] == 1) {
+        $object['publishCian'] = 1;
+    } else {
+        $object['publishCian'] = 0;
+    }
+    if (isset($_POST['publishAvito']) && $_POST['publishAvito'] == 1) {
+        $object['publishAvito'] = 1;
+    } else {
+        $object['publishAvito'] = 0;
+    }
 
     if (strlen($_POST['name']) < 3) {
         $msg['type'] = 'danger';
@@ -154,6 +164,9 @@ if (isset($_GET['id'])) {
         $objects_photo = $db->getAll("SELECT * FROM objects_photo WHERE object_id = ?i AND is_del = 0", $_GET['id']);
 
         $title = 'Редактирование объекта:<br>'.$object['name'];
+
+        if ($object['publishCian'] == 1) {$publishCianState = 'checked';} else {$publishCianState = '';}
+        if ($object['publishAvito'] == 1) {$publishAvitoState = 'checked';} else {$publishAvitoState = '';}
 
     } else {
         $msg['type'] = "danger";

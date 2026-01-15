@@ -53,3 +53,7 @@ INSERT INTO `cian_categories` (`id`, `name`, `cian_code`, `category`, `object_ty
 (6, 'Участок (продажа)', 'landSale', 1, 3, 6),
 (7, 'Гараж (продажа)', 'garageSale', 1, 0, 7),
 (8, 'Коммерческая недвижимость', 'commerce', 0, 4, 8);
+
+
+
+ALTER TABLE `objects` ADD `publishCian` INT NOT NULL DEFAULT '0' AFTER `is_del`, ADD `publishAvito` INT NOT NULL DEFAULT '0' AFTER `publishCian`;

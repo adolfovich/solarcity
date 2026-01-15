@@ -56,6 +56,18 @@
                             <div class="col">
                                 <form enctype="multipart/form-data" method="POST">
 
+                                    <div class="form-group form-check">
+                                        <input name="publishCian" type="checkbox" class="form-check-input" id="publishCian" <?=$publishCianState?> value="1">
+                                        <label class="form-check-label" for="publishCian">Публиковать на Циан</label>
+                                    </div>
+
+                                    <div class="form-group form-check">
+                                        <input name="publishAvito" type="checkbox" class="form-check-input" id="publishAvito" <?=$publishAvitoState?> value="1">
+                                        <label class="form-check-label" for="publishAvito">Публиковать на Авито</label>
+                                    </div>
+
+                                    <br>
+
                                     <div class="form-group">
                                         <label for="name">Название</label>
                                         <input type="text" name="name" id="name" class="form-control" value="<?=$object['name']?>">
