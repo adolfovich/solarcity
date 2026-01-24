@@ -82,6 +82,10 @@ if (isset($_GET['action']) && $_GET['action'] == 'new') {
         $object['area_premises'] = '';
         $object['area_plot'] = '';
         $object['comment'] = '';
+        $object['publishCian'] = 0;
+        $object['publishAvito'] = 0;
+        $publishCianState = '';
+        $publishAvitoState = '';
     }
 
 
@@ -164,6 +168,14 @@ if (isset($_GET['id'])) {
         $objects_photo = $db->getAll("SELECT * FROM objects_photo WHERE object_id = ?i AND is_del = 0", $_GET['id']);
 
         $title = 'Редактирование объекта:<br>'.$object['name'];
+
+        // Инициализируем поля, если их нет в БД (для совместимости со старыми данными)
+        if (!isset($object['publishCian'])) {
+            $object['publishCian'] = 0;
+        }
+        if (!isset($object['publishAvito'])) {
+            $object['publishAvito'] = 0;
+        }
 
         if ($object['publishCian'] == 1) {$publishCianState = 'checked';} else {$publishCianState = '';}
         if ($object['publishAvito'] == 1) {$publishAvitoState = 'checked';} else {$publishAvitoState = '';}

@@ -35,6 +35,7 @@ $objects = $db->getAll("
         ON cc_auto.object_type = o.type 
        AND cc_auto.category = o.category
     WHERE o.is_del = 0
+      AND o.publishCian = 1
     ORDER BY o.id DESC
 ");
 

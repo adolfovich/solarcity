@@ -28,6 +28,7 @@ $objects = $db->getAll("
     WHERE o.is_del = 0 
       AND o.category = 1 
       AND (o.type = 2 OR o.type = 3)
+      AND o.publishAvito = 1
     ORDER BY o.id DESC
     LIMIT 50000
 ");
