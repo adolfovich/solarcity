@@ -4,7 +4,7 @@ error_reporting(0);
 ini_set('display_errors', 0);
 
 header('Content-Type: application/xml; charset=utf-8');
-/*
+
 // Блок безопасности: только XML-запросы, без GET/POST параметров
 if (!empty($_GET) || !empty($_POST) || !empty($_COOKIE)) {
     http_response_code(403);
@@ -23,7 +23,7 @@ if (!in_array(true, array_map(function($agent) use ($ua) {
     http_response_code(403);
     die('Access Denied');
 }
-*/
+
 // Загружаем объекты вместе с кодом категории Циан (учитываем явный выбор и авто-подбор по типу)
 $objects = $db->getAll("
     SELECT 
