@@ -5,22 +5,18 @@ ini_set('display_errors', 0);
 
 header('Content-Type: application/xml; charset=utf-8');
 
-// Блок безопасности: только XML-запросы, без GET/POST параметров
-if (!empty($_GET) || !empty($_POST) || !empty($_COOKIE)) {
+// Блок безопасности: доступ только с разрешённых IP-адресов
+$allowedIps = [
+    '178.154.246.58',
+    '130.193.54.30',
+    '62.84.119.246',
+    '89.169.181.174',
+];
+
+$remoteIp = $_SERVER['REMOTE_ADDR'] ?? '';
+if (!in_array($remoteIp, $allowedIps, true)) {
     http_response_code(403);
     header('Content-Type: text/plain; charset=utf-8');
-    die('Access Denied');
-}
-
-// Защита от горячих ссылок (только User-Agent ботов ЦИАН/Google/etc)
-$userAgents = [
-    'CianBot', 'Googlebot', 'bingbot', 'YandexBot', 'MJ12bot'
-];
-$ua = $_SERVER['HTTP_USER_AGENT'] ?? '';
-if (!in_array(true, array_map(function($agent) use ($ua) { 
-    return stripos($ua, $agent) !== false; 
-}, $userAgents)) && empty($_SERVER['HTTP_USER_AGENT'])) {
-    http_response_code(403);
     die('Access Denied');
 }
 
