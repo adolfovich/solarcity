@@ -167,10 +167,10 @@ foreach ($objects as $obj) {
     $bargain->appendChild($dom->createElement('Currency', 'rur'));
     $object->appendChild($bargain);
 
-    // Land — обязательный тег для houseSale с площадью участка
+    // Land — обязательный тег для houseSale и landSale с площадью участка
     $categoryCode = mapCategory($obj);
     $areaPlot = (float)($obj['area_plot'] ?? 0);
-    if ($categoryCode === 'houseSale' && $areaPlot > 0) {
+    if (in_array($categoryCode, ['houseSale', 'landSale'], true) && $areaPlot > 0) {
         $land = $dom->createElement('Land');
         $land->appendChild($dom->createElement('Area', number_format($areaPlot, 2, '.', '')));
         $land->appendChild($dom->createElement('AreaUnitType', 'sotka'));
