@@ -5,6 +5,58 @@ ini_set('display_errors', 0);
 
 header('Content-Type: application/xml; charset=utf-8');
 
+// Блок безопасности: доступ только с разрешённых IP-диапазонов Avito
+$allowedCidrs = [
+    '185.89.12.0/22',
+    '146.158.48.0/21',
+    '185.79.237.224/28',
+    '87.245.204.32/28',
+    '176.109.112.0/20',
+    '176.114.112.0/20',
+];
+
+/**
+ * Проверка, входит ли IP в CIDR-диапазон
+ */
+if (!function_exists('ipInCidr')) {
+    function ipInCidr(string $ip, string $cidr): bool
+    {
+        if (strpos($cidr, '/') === false) {
+            return $ip === $cidr;
+        }
+
+        list($subnet, $mask) = explode('/', $cidr, 2);
+        $ipLong     = ip2long($ip);
+        $subnetLong = ip2long($subnet);
+        if ($ipLong === false || $subnetLong === false) {
+            return false;
+        }
+
+        $mask = (int)$mask;
+        $maskLong = -1 << (32 - $mask);
+        $subnetLong &= $maskLong;
+
+        return ($ipLong & $maskLong) === $subnetLong;
+    }
+}
+
+$remoteIp = $_SERVER['REMOTE_ADDR'] ?? '';
+$accessAllowed = false;
+if (!empty($remoteIp)) {
+    foreach ($allowedCidrs as $cidr) {
+        if (ipInCidr($remoteIp, $cidr)) {
+            $accessAllowed = true;
+            break;
+        }
+    }
+}
+
+if (!$accessAllowed) {
+    http_response_code(403);
+    header('Content-Type: text/plain; charset=utf-8');
+    die('Access Denied');
+}
+
 // Получаем URL сайта из настроек
 $siteUrl = $db->getOne("SELECT `data` FROM `settings` WHERE `name` = ?s", 'site_url');
 if (empty($siteUrl)) {
@@ -28,6 +80,7 @@ $objects = $db->getAll("
     WHERE o.is_del = 0 
       AND o.category = 1 
       AND (o.type = 2 OR o.type = 3)
+      AND o.publishAvito = 1
     ORDER BY o.id DESC
     LIMIT 50000
 ");
