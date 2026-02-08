@@ -145,7 +145,7 @@
                                         <div class="row">
                                             <?php if(isset($objects_photo)) {
                                                 foreach($objects_photo as $object_photo) {?>
-                                                    <div class="col">
+                                                    <div class="col-lg-2">
                                                         <img src="<?=$object_photo['path']?>" style="width: 100%; aspect-ratio: 4 / 3;"><br>
                                                         <div class="row">
                                                         <?php if ($object_photo['is_master']) { ?>
@@ -154,7 +154,7 @@
                                                             </div>
                                                         <?php } else {?>
                                                             <div class="col">
-                                                                <a class="btn btn-dark" href="?id=<?=$object['id']?>&action=set_def_photo&photo=<?=$object_photo['id']?>" style="width: 100%; color: #fff; border-radius: 0px;">Сделать главным</a>
+                                                                <a class="btn btn-dark" href="?id=<?=$object['id']?>&action=set_def_photo&photo=<?=$object_photo['id']?>" style="padding-left: 5px; padding-right: 5px; width: 100%; color: #fff; border-radius: 0px;">Сделать главным</a>
                                                             </div>
                                                         <?php } ?>
                                                             <div class="col">

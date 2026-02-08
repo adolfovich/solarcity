@@ -3,7 +3,6 @@
 $object_types = $db->getAll("SELECT * FROM objects_types ORDER BY ordering");
 $object_categories = $db->getAll("SELECT * FROM categories ORDER BY ordering");
 
-
 if (isset($_POST['name'])) {
 
     $object['name'] = $_POST['name'];
@@ -62,8 +61,6 @@ if (isset($_POST['name'])) {
             $db->query("UPDATE objects SET ?u WHERE id = ?i", $object, $_GET['id']);
             $object_id = $_GET['id'];
         }
-
-
     }
 }
 
@@ -84,7 +81,6 @@ if (isset($_GET['action']) && $_GET['action'] == 'new') {
         $object['comment'] = '';
     }
 
-
 } else if (isset($_GET['action']) && $_GET['action'] == 'delete') {
 
     echo 'delete';
@@ -102,13 +98,12 @@ if (isset($_GET['action']) && $_GET['action'] == 'new') {
 
 }
 
-
-
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_FILES['photos']) && $error == false) {
     $uploadDir = 'img/photo/';
     $maxSize = 7 * 1024 * 1024;
 
     foreach ($_FILES['photos']['tmp_name'] as $key => $tmpName) {
+
 
         if ($_FILES['photos']['error'][$key] === UPLOAD_ERR_OK) {
             $fileName = $_FILES['photos']['name'][$key];
@@ -135,6 +130,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_FILES['photos']) && $error 
 
             if (move_uploaded_file($tmpName, $uploadPath)) {
 
+                $resize = $core->resizeAndConvertToPNGAdvanced($uploadPath, 1024, true, 6);
+
                 $master_photo = $db->getOne("SELECT is_master FROM objects_photo WHERE object_id = ?i", $object_id);
 
                 if ($master_photo) {
@@ -145,8 +142,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_FILES['photos']) && $error 
 
                 $db->query("INSERT INTO objects_photo SET object_id = ?i, path = ?s, is_master = ?i", $object_id, '/'.$uploadPath, $is_master);
             }
-
-
         }
     }
 }

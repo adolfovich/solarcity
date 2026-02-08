@@ -403,6 +403,129 @@ class Core
       return $photo;
   }
 
+    public function resizeAndConvertToPNGAdvanced($sourcePath, $maxLongSide = 1200, $preserveAspectRatio = true, $quality = 6) : bool {
+        // Проверяем существование файла
+        if (!file_exists($sourcePath) || !is_readable($sourcePath)) {
+            echo("Файл не найден или недоступен для чтения: $sourcePath");
+            return false;
+        }
+
+        // Проверяем максимальный размер
+        if ($maxLongSide <= 0) {
+            echo("Некорректный размер длинной стороны: $maxLongSide");
+            return false;
+        }
+
+        // Определяем тип изображения
+        $imageInfo = @getimagesize($sourcePath);
+        if ($imageInfo === false) {
+            echo("Не удалось определить тип изображения: $sourcePath");
+            return false;
+        }
+
+        list($width, $height) = $imageInfo;
+        $mimeType = $imageInfo['mime'];
+
+        // Загружаем изображение в зависимости от типа
+        $image = null;
+        switch ($mimeType) {
+            case 'image/jpeg':
+                $image = @imagecreatefromjpeg($sourcePath);
+                break;
+            case 'image/png':
+                $image = @imagecreatefrompng($sourcePath);
+                // Сохраняем информацию о прозрачности
+                imagesavealpha($image, true);
+                break;
+            case 'image/gif':
+                $image = @imagecreatefromgif($sourcePath);
+                break;
+            case 'image/webp':
+                $image = @imagecreatefromwebp($sourcePath);
+                break;
+            default:
+                echo("Неподдерживаемый формат: $mimeType");
+                return false;
+        }
+
+        if (!$image) {
+            echo("Не удалось загрузить изображение: $sourcePath");
+            return false;
+        }
+
+        // Рассчитываем новые размеры
+        if ($preserveAspectRatio) {
+            $ratio = $width / $height;
+
+            if ($width > $height) {
+                $newWidth = $maxLongSide;
+                $newHeight = round($maxLongSide / $ratio);
+            } else {
+                $newHeight = $maxLongSide;
+                $newWidth = round($maxLongSide * $ratio);
+            }
+
+            // Проверяем, не превышает ли короткая сторона максимальный размер
+            if ($newWidth > $maxLongSide) {
+                $newWidth = $maxLongSide;
+                $newHeight = round($maxLongSide / $ratio);
+            }
+            if ($newHeight > $maxLongSide) {
+                $newHeight = $maxLongSide;
+                $newWidth = round($maxLongSide * $ratio);
+            }
+        } else {
+            $newWidth = $maxLongSide;
+            $newHeight = $maxLongSide;
+        }
+
+        // Создаем новое изображение
+        $newImage = imagecreatetruecolor($newWidth, $newHeight);
+        if (!$newImage) {
+            echo("Не удалось создать новое изображение");
+            imagedestroy($image);
+            return false;
+        }
+
+        // Настройка прозрачности для PNG
+        imagealphablending($newImage, false);
+        imagesavealpha($newImage, true);
+        $transparent = imagecolorallocatealpha($newImage, 0, 0, 0, 127);
+        imagefill($newImage, 0, 0, $transparent);
+
+        // Изменяем размер
+        $success = imagecopyresampled(
+            $newImage, $image,
+            0, 0, 0, 0,
+            $newWidth, $newHeight,
+            $width, $height
+        );
+
+        imagedestroy($image);
+
+        if (!$success) {
+            echo("Не удалось изменить размер изображения");
+            imagedestroy($newImage);
+            return false;
+        }
+
+
+
+        // Сохраняем как PNG
+        $quality = max(0, min(9, $quality)); // Ограничиваем качество в диапазоне 0-9
+
+        $result = imagepng($newImage, $sourcePath, $quality);
+
+        imagedestroy($newImage);
+
+        if (!$result || !file_exists($sourcePath)) {
+            echo("Не удалось сохранить изображение: $sourcePath");
+            return false;
+        }
+
+        return true;
+    }
+
   public function modifyObgectNum($id)
   {
         if ($id < 10) {
