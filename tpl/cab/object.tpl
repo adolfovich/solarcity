@@ -13,11 +13,11 @@
                     </button>
                 </div>
                 <div class="modal-body">
-                    <p>Вы хотите удалить объект: <?=$object['name']?></p>
+                    <p>Вы переместить объект в архив: <?=$object['name']?></p>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Отмена</button>
-                    <a  class="btn btn-danger" href="?id=<?=$object['id']?>&action=delete">Удалить</a>
+                    <a  class="btn btn-danger" href="?id=<?=$object['id']?>&action=delete">В архив</a>
                 </div>
             </div>
         </div>
@@ -184,7 +184,11 @@
                                     <?php if (!isset($_GET['action'])) { ?>
 
                                     <!--a class="btn btn-danger" href="?id=<?=$object['id']?>&action=delete">Удалить</a-->
-                                    <a class="btn btn-danger" href="#" data-toggle="modal" data-target="#deleteModal">Удалить</a>
+                                        <?php if ($object['is_del'] == 0) { ?>
+                                            <a class="btn btn-danger" href="#" data-toggle="modal" data-target="#deleteModal">В архив</a>
+                                        <?php } else { ?>
+                                            <a class="btn btn-warning" href="?id=<?=$object['id']?>&action=undelete">Из архива</a>
+                                        <?php } ?>
                                     <?php } ?>
 
                                 </form>

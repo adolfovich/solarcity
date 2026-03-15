@@ -87,8 +87,12 @@ if (isset($_GET['action']) && $_GET['action'] == 'new') {
 
 } else if (isset($_GET['action']) && $_GET['action'] == 'delete') {
 
-    echo 'delete';
     $db->query("UPDATE objects SET is_del = 1 WHERE id = ?i", $_GET['id']);
+    $core->jsredir('objects');
+
+} else if (isset($_GET['action']) && $_GET['action'] == 'undelete') {
+
+    $db->query("UPDATE objects SET is_del = 0 WHERE id = ?i", $_GET['id']);
     $core->jsredir('objects');
 
 } else if (isset($_GET['action']) && $_GET['action'] == 'set_def_photo' && $_GET['photo'] != '') {

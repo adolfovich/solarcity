@@ -37,13 +37,57 @@
                         <div class="row">
                             <div class="col">
                                 <!--Строка поиска (одна строка для поиска по названию, адресу, описанию, комментарию, цене), фильтр категории(аренда, продажа)<br>-->
-                                <div class="input-group mb-3">
-                                    <input type="text" class="form-control" placeholder="Ведите поисковой запрос" aria-label="Serch" aria-describedby="basic-addon1">
-                                    <div class="input-group-prepend">
-                                        <span class="input-group-text" id="basic-addon1"><i class="fa fa-search" aria-hidden="true"></i></span>
+                                <form id="searchForm" onsubmit="return false">
+                                    <div class="input-group mb-3">
+                                        <?php
+                                        if (isset($_GET['searchText'])) {
+                                            $searchText = $_GET['searchText'];
+                                        } else {
+                                            $searchText = '';
+                                        }
+                                        ?>
+                                        <input name="searchText" id="searchText" onchange="sendSearchForm()" type="text" class="form-control" placeholder="Ведите поисковой запрос" aria-label="Serch" aria-describedby="basic-addon1" value="<?=$searchText?>">
+                                        <div class="input-group-prepend">
+                                            <span style="cursor: pointer;" onclick="sendSearchForm()" class="input-group-text" id="basic-addon1"><i class="fa fa-search" aria-hidden="true"></i></span>
+                                        </div>
                                     </div>
-                                </div>
+                                    <div class="form-group form-check">
+                                        <?php
+                                            if (isset($_GET['isDel']) && $_GET['isDel'] == 1) {
+                                               $isDelChecked = 'checked';
+                                            } else {
+                                                $isDelChecked = '';
+                                            }
+                                        ?>
+                                        <input name="searchDel" id="searchDel" onchange="sendSearchForm()" type="checkbox" class="form-check-input" id="exampleCheck1" <?=$isDelChecked?>>
+
+                                        <label class="form-check-label" for="exampleCheck1">Показывать архивные</label>
+                                    </div>
+                                </form>
                             </div>
+                        </div>
+
+                        <script>
+                            function sendSearchForm() {
+                                searchText = $('#searchText').val();
+                                console.log(searchText);
+                                searchDelBool = $('#searchDel').is(':checked');
+                                console.log(searchDelBool);
+                                if (searchDelBool == true) {
+                                    searchDel = 1;
+                                } else {
+                                    searchDel = 0;
+                                }
+                                searchStr = '?action=search&searchText='+searchText+'&isDel='+searchDel;
+
+                                console.log(encodeURI(searchStr));
+
+                                window.location.href = 'objects'+encodeURI(searchStr);
+                            }
+                        </script>
+
+                        <div class="row">
+                            <br>
                         </div>
 
                         <div class="row">
