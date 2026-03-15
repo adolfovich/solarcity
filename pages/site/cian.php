@@ -151,7 +151,8 @@ foreach ($objects as $obj) {
     }
     
     // Address
-    $address = trim($obj['address'] ?? $obj['address_approx'] ?? 'Не указан');
+    //$address = trim($obj['address'] ?? $obj['address_approx'] ?? 'Не указан');
+    $address = trim($obj['address_approx'] ?? 'Не указан');
     $object->appendChild($dom->createElement('Address', htmlspecialchars($address)));
     
     // Площадь

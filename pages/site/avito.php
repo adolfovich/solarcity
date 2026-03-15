@@ -175,10 +175,10 @@ foreach ($objects as $obj) {
     $ad->appendChild($descElement);
     
     // Address - обязательный (до 256 символов)
-    $address = mb_substr(trim($obj['address'] ?? ''), 0, 256);
-    if (empty($address)) {
+    $address = mb_substr(trim($obj['address_approx'] ?? ''), 0, 256);
+    /*if (empty($address)) {
         $address = mb_substr(trim($obj['address_approx'] ?? 'Не указан'), 0, 256);
-    }
+    }*/
     $ad->appendChild($dom->createElement('Address', escapeXml($address)));
     
     // Category - обязательный
