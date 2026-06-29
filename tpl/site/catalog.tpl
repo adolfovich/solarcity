@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="ru-ru"><head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="description" content="Купить, продать или снять недвижимость в Красноармейском районе? АН «Солнечный город» — это прозрачные сделки, юр. сопровождение и помощь с ипотекой. Начните новый этап жизни с нами!">
 
     <!-- 9850040ab6b48d270a7dae24c0d1bd31 -->
     <!-- 2025-10-08 -->
@@ -77,7 +78,7 @@
 
     <title>Каталог - <?=$pageName?></title>
     <meta name="keywords" content="">
-    <meta name="description" content="">
+
 
 
     <meta property="og:type" content="website">

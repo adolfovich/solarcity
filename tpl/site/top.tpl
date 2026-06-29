@@ -1,3 +1,7 @@
+<?php
+ echo $core->cfgRead('ya_metrika');
+?>
+
 <div class="section section105 bg_mode_color" style="	background-color:#fff;	;	--dropdown-menu-bg-color:#ffffff;	--dropdown-menu-text-color:#333333;	--dropdown-menu-border-color:#f1f1f1;	--dropdown-menu-hover-bg-color:#f8f9fa;	--dropdown-menu-hover-text-color:#333333;	--dropdown-menu-shadow:0 3px 10px rgba(0, 0, 0, 0.2);	--dropdown-menu-item-padding:4px 15px;	padding-top:20px;	padding-bottom:20px" data-id="1709038" id="b_1709038">
     <div class="section_inner all_border width1170">
         <div class="logo">
@@ -53,7 +57,7 @@
                             </ul>
                         </div>
                     </li>
-                    <li class="level0 "><a href="/contacts" title="КОНТАКТЫ">КОНТАКТЫ</a></li>
+                    <!--li class="level0 "><a href="/contacts" title="КОНТАКТЫ">КОНТАКТЫ</a></li-->
                     <li class="level0 "><a href="/cab" title="КАБИНЕТ">КАБИНЕТ</a></li>
                 </ul>
             </div>
