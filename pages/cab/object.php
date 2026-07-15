@@ -104,6 +104,12 @@ if (isset($_GET['action']) && $_GET['action'] == 'new') {
 
     $db->query("UPDATE objects_photo SET is_del = 1 WHERE id = ?i", $_GET['photo']);
 
+} else if (isset($_GET['action']) && $_GET['action'] == 'rotate' && $_GET['img'] != '') {
+    var_dump($_GET);
+    $image_path = $db->getOne("SELECT path FROM objects_photo WHERE id = ?i", $_GET['img']);
+    $image_path = mb_substr($image_path, 1);
+    var_dump($image_path);
+    $core->rotatePhoto($image_path, 90, 'img/photo/', $formatImg = 'png');
 }
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_FILES['photos']) && $error == false) {
@@ -145,7 +151,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_FILES['photos']) && $error 
                 if ($master_photo) {
                     $is_master = 0;
                 } else {
-                    $is_master = 1;
+                    $is_master = 0;
                 }
 
                 $db->query("INSERT INTO objects_photo SET object_id = ?i, path = ?s, is_master = ?i", $object_id, '/'.$uploadPath, $is_master);

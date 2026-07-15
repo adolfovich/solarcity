@@ -158,6 +158,9 @@
                                                             </div>
                                                         <?php } ?>
                                                             <div class="col">
+                                                                <a class="btn btn-success"  href="?id=<?=$object['id']?>&action=rotate&img=<?=$object_photo['id']?>" style="width: 100%; color: #fff; border-radius: 0px;">Повернуть</a>
+                                                            </div>
+                                                            <div class="col">
                                                                 <a class="btn btn-success"  target="_blank" href="<?=$object_photo['path']?>" style="width: 100%; color: #fff; border-radius: 0px;">Открыть</a>
                                                             </div>
                                                         </div>

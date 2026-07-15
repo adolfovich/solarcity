@@ -538,4 +538,26 @@ class Core
 
         return $newId;
   }
+
+    public function rotatePhoto($img, $degree, $path, $formatImg = 'jpeg'){
+        // получаем данные о картинке
+        $size = getimagesize($img);
+        //определяем тип (расширение) картинки
+        $format = strtolower(substr($size['mime'], strpos($size['mime'], '/')+1));
+        $icfunc = "imagecreatefrom" . $format;   //определение функции для расшерения файла
+        //если нет такой функции, то прекращаем работу скрипта
+        if (!function_exists($icfunc)) return false;
+        // Загрузка изображения
+        $source = $icfunc($img);
+        // Поворот. Пустые углы заливаем цветом 0xffffff
+        $rotate = imagerotate($source, $degree, imageColorAllocateAlpha($source, 0, 0, 0, 127));
+        // сохраняем картинку
+        $func = 'image'.$formatImg;
+        var_dump($func);
+        $func($rotate, $img);
+        // очищаем пямять
+        imagedestroy($rotate);
+        // возвращаем путь к новой картинке
+        return $path;
+    }
 }
