@@ -141,7 +141,7 @@
                                     </div>
 
                                     <div class="form-group">
-                                        <label for="photos">Фото объекта</label>
+                                        <label id="object_photo" for="photos">Фото объекта</label>
                                         <div class="row">
                                             <?php if(isset($objects_photo)) {
                                                 foreach($objects_photo as $object_photo) {?>

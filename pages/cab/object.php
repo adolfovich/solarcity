@@ -105,11 +105,26 @@ if (isset($_GET['action']) && $_GET['action'] == 'new') {
     $db->query("UPDATE objects_photo SET is_del = 1 WHERE id = ?i", $_GET['photo']);
 
 } else if (isset($_GET['action']) && $_GET['action'] == 'rotate' && $_GET['img'] != '') {
-    var_dump($_GET);
+    //var_dump($_GET);
     $image_path = $db->getOne("SELECT path FROM objects_photo WHERE id = ?i", $_GET['img']);
-    $image_path = mb_substr($image_path, 1);
-    var_dump($image_path);
-    $core->rotatePhoto($image_path, 90, 'img/photo/', $formatImg = 'png');
+    //$image_path = mb_substr($image_path, 1);
+    //$imageType = image_type_to_mime_type(exif_imagetype($image_path));
+    //var_dump($imageType);
+    //$core->rotatePhoto($image_path, 90, 'img/photo/', $formatImg = 'png');
+    //var_dump($image_path);
+    //$rotate = $core->rotateImage($image_path, 90);
+    //var_dump($rotate);
+
+    try {
+        $core->rotateImage($image_path, 90);
+
+        //$core->jsredir('#object_photo');
+        //var_dump("Изображение успешно повёрнуто");
+    } catch (Exception $e) {
+        echo "Ошибка: " . $e->getMessage();
+
+    }
+    //$core->jsredir('object?id='.$_GET['id']);
 }
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_FILES['photos']) && $error == false) {

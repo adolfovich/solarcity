@@ -539,7 +539,7 @@ class Core
         return $newId;
   }
 
-    public function rotatePhoto($img, $degree, $path, $formatImg = 'jpeg'){
+    /*public function rotatePhoto($img, $degree, $path, $formatImg = 'jpeg'){
         // получаем данные о картинке
         $size = getimagesize($img);
         //определяем тип (расширение) картинки
@@ -551,13 +551,93 @@ class Core
         $source = $icfunc($img);
         // Поворот. Пустые углы заливаем цветом 0xffffff
         $rotate = imagerotate($source, $degree, imageColorAllocateAlpha($source, 0, 0, 0, 127));
+        var_dump($rotate);
         // сохраняем картинку
         $func = 'image'.$formatImg;
-        var_dump($func);
+        //var_dump($func);
         $func($rotate, $img);
         // очищаем пямять
         imagedestroy($rotate);
         // возвращаем путь к новой картинке
         return $path;
+    }*/
+
+
+    public function rotateImage(string $filePath, float $angle): bool
+    {
+        // Проверяем существование файла
+        $filePath = mb_substr($filePath, 1);
+
+        if (!file_exists($filePath)) {
+            throw new InvalidArgumentException("Файл не найден: {$filePath}");
+        }
+
+        // Получаем информацию об изображении
+        $imageInfo = getimagesize($filePath);
+        if ($imageInfo === false) {
+            throw new InvalidArgumentException("Не удалось определить тип изображения: {$filePath}");
+        }
+
+        $mimeType = $imageInfo['mime'];
+
+        // Создаём ресурс изображения в зависимости от типа
+        switch ($mimeType) {
+            case 'image/jpeg':
+            case 'image/jpg':
+                $image = imagecreatefromjpeg($filePath);
+                break;
+            case 'image/png':
+                $image = imagecreatefrompng($filePath);
+                break;
+            case 'image/gif':
+                $image = imagecreatefromgif($filePath);
+                break;
+            case 'image/webp':
+                $image = imagecreatefromwebp($filePath);
+                break;
+            default:
+                throw new InvalidArgumentException("Неподдерживаемый формат: {$mimeType}");
+        }
+
+        if ($image === false) {
+            throw new RuntimeException("Не удалось открыть изображение");
+        }
+
+        // Поворачиваем изображение
+        // IMG_BICUBIC даёт лучшее качество, но требует больше ресурсов
+        $rotated = imagerotate($image, $angle, 0);
+
+        if ($rotated === false) {
+            imagedestroy($image);
+            throw new RuntimeException("Не удалось повернуть изображение");
+        }
+
+        // Сохраняем результат по тому же пути
+        switch ($mimeType) {
+            case 'image/jpeg':
+            case 'image/jpg':
+                $result = imagejpeg($rotated, $filePath, 90);
+                break;
+            case 'image/png':
+                // Сохраняем прозрачность
+                imagealphablending($rotated, false);
+                imagesavealpha($rotated, true);
+                $result = imagepng($rotated, $filePath);
+                break;
+            case 'image/gif':
+                $result = imagegif($rotated, $filePath);
+                break;
+            case 'image/webp':
+                $result = imagewebp($rotated, $filePath, 90);
+                break;
+            default:
+                $result = false;
+        }
+
+        // Освобождаем память
+        imagedestroy($image);
+        imagedestroy($rotated);
+
+        return $result;
     }
 }
