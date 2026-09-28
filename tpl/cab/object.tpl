@@ -146,7 +146,7 @@
                                             <?php if(isset($objects_photo)) {
                                                 foreach($objects_photo as $object_photo) {?>
                                                     <div class="col-lg-2">
-                                                        <img src="<?=$object_photo['path']?>" style="width: 100%; aspect-ratio: 4 / 3;"><br>
+                                                        <img src="<?=$object_photo['path'].'?v='.time()?>" style="width: 100%; aspect-ratio: 4 / 3;"><br>
                                                         <div class="row">
                                                         <?php if ($object_photo['is_master']) { ?>
                                                             <div class="col">
